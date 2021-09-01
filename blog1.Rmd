@@ -14,6 +14,71 @@ Afghanistan is a country located in the south-central Asia. The country has been
 
 Below, the analysis is focused on the COVID-19 numbers (cases and deaths) and its relation with the on-going crises.
 
+```{r loadinglibraries, echo=FALSE}
+library(readr)
+library(tidyverse)
+library(lubridate)
+library(kableExtra)
+```
+
+# Data Description
+
+```{r loadingdata, echo=FALSE}
+Afghan_data <- read_csv(here::here(("data/WHO-COVID-19-global-data.csv"))) %>% 
+  select(Date_reported, Country, New_cases,	Cumulative_cases,	New_deaths,	Cumulative_deaths) %>% 
+  mutate(Year = year(Date_reported),
+         Month= month(Date_reported)) %>% 
+  select(-c(Date_reported)) 
+```
+
+## Data Source
+
+The data set used in this blog has been extracted from [World Health Organization-WHO](https://covid19.who.int/info/). Which was in-turn collected by WHO via different sources. Till 21 March'20, WHO collected these numbers via official ministries of health websites, social media and through official communications under the International Health Regulations-IHR, 2005. From 22 March'20, WHO collected data through WHO dashboards and counts declared at the WHO headquarters regularly (WHO Coronavirus (COVID-19) Dashboard, 2021).
+
+## Variable description
+
+The data set contains the data from January'20 to December'21. The variables used in the analysis are given below with their description and variable type: 
+
+```{r identifyingtypes, include=FALSE}
+str(Afghan_data)
+```
+
+```{r desc, echo=FALSE}
+Desc <- data.frame(Variables = names(Afghan_data),
+                          Description = c("Country - Afghanistan",
+                                          "New COVID-19 cases, calculated by subtracting 'previous total cases before the date' from 'current total cases till date'",
+                                          "Total COVID-19 cases till date",
+                                          "New COVID-19 deaths, calculated by subtracting 'previous total deaths before the date' from 'current total deaths till date'",
+                                          "Total COVID-19 deaths till date",
+                                          "Year of reporting to WHO",
+                                          "Month of reporting to WHO"
+                                        
+                                          ),
+                   Type = c("character",
+                            "numeric",
+                            "numeric",
+                            "numeric",
+                            "numeric",
+                            "numeric",
+                            "numeric"))
+
+kbl(Desc) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+# Analysis
+
+## Data Information Display
+
+
+
+## Analysis Communicaion
+
+
 # References
 
+Covid19.who.int. 2021. WHO Coronavirus (COVID-19) Dashboard. [online] Available at: <https://covid19.who.int/info/> [Accessed 1 September 2021].
+
 Ghai, R., 2021. Taliban take-over: Afghanistan already battling drought, hunger, COVID-19. DownToEarth, [online]. URL: https://www.downtoearth.org.in/news/governance/taliban-take-over-afghanistan-already-battling-drought-hunger-covid-19-78475 [Accessed 1 September 2021].
+
+

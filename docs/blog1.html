@@ -2037,6 +2037,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   <!--/radix_placeholder_distill-->
   <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
+  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2102,6 +2104,16 @@ Blogs
 <h3>Contents</h3>
 <ul>
 <li><a href="#introduction">Introduction</a></li>
+<li><a href="#data-description">Data Description</a>
+<ul>
+<li><a href="#data-source">Data Source</a></li>
+<li><a href="#variable-description">Variable description</a></li>
+</ul></li>
+<li><a href="#analysis">Analysis</a>
+<ul>
+<li><a href="#data-information-display">Data Information Display</a></li>
+<li><a href="#analysis-communicaion">Analysis Communicaion</a></li>
+</ul></li>
 <li><a href="#references">References</a></li>
 </ul>
 </nav>
@@ -2109,7 +2121,118 @@ Blogs
 <h1 id="introduction">Introduction</h1>
 <p>Afghanistan is a country located in the south-central Asia. The country has been under a continuous conflict for 40 years and is again at war in 2021 itself. Before this it has been struggling with drought, hunger and along with it, the coronavirus disease (COVID-19) as well (Ghai, 2021).</p>
 <p>Below, the analysis is focused on the COVID-19 numbers (cases and deaths) and its relation with the on-going crises.</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h1 id="data-description">Data Description</h1>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h2 id="data-source">Data Source</h2>
+<p>The data set used in this blog has been extracted from <a href="https://covid19.who.int/info/">World Health Organization-WHO</a>. Which was in-turn collected by WHO via different sources. Till 21 March’20, WHO collected these numbers via official ministries of health websites, social media and through official communications under the International Health Regulations-IHR, 2005. From 22 March’20, WHO collected data through WHO dashboards and counts declared at the WHO headquarters regularly (WHO Coronavirus (COVID-19) Dashboard, 2021).</p>
+<h2 id="variable-description">Variable description</h2>
+<p>The data set contains the data from January’20 to December’21. The variables used in the analysis are given below with their description and variable type:</p>
+<div class="layout-chunk" data-layout="l-body">
+<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Variables
+</th>
+<th style="text-align:left;">
+Description
+</th>
+<th style="text-align:left;">
+Type
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Country
+</td>
+<td style="text-align:left;">
+Country - Afghanistan
+</td>
+<td style="text-align:left;">
+character
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+New_cases
+</td>
+<td style="text-align:left;">
+New COVID-19 cases, calculated by subtracting ‘previous total cases before the date’ from ‘current total cases till date’
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cumulative_cases
+</td>
+<td style="text-align:left;">
+Total COVID-19 cases till date
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+New_deaths
+</td>
+<td style="text-align:left;">
+New COVID-19 deaths, calculated by subtracting ‘previous total deaths before the date’ from ‘current total deaths till date’
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cumulative_deaths
+</td>
+<td style="text-align:left;">
+Total COVID-19 deaths till date
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Year
+</td>
+<td style="text-align:left;">
+Year of reporting to WHO
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Month
+</td>
+<td style="text-align:left;">
+Month of reporting to WHO
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="analysis">Analysis</h1>
+<h2 id="data-information-display">Data Information Display</h2>
+<h2 id="analysis-communicaion">Analysis Communicaion</h2>
 <h1 id="references">References</h1>
+<p>Covid19.who.int. 2021. WHO Coronavirus (COVID-19) Dashboard. [online] Available at: <a href="https://covid19.who.int/info/" class="uri">https://covid19.who.int/info/</a> [Accessed 1 September 2021].</p>
 <p>Ghai, R., 2021. Taliban take-over: Afghanistan already battling drought, hunger, COVID-19. DownToEarth, [online]. URL: <a href="https://www.downtoearth.org.in/news/governance/taliban-take-over-afghanistan-already-battling-drought-hunger-covid-19-78475" class="uri">https://www.downtoearth.org.in/news/governance/taliban-take-over-afghanistan-already-battling-drought-hunger-covid-19-78475</a> [Accessed 1 September 2021].</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
