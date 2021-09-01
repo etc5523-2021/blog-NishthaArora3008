@@ -6,7 +6,7 @@
       "description": "Some additional details about the blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-09-01T15:32:15+05:30"
+      "last_modified": "2021-09-01T15:55:08+05:30"
     },
     {
       "path": "blog1.html",
@@ -15,20 +15,20 @@
       "author": [],
       "date": "`r Sys.Date()`",
       "contents": "\n\nContents\nIntroduction\nData Description\nData Source\nVariable description\n\nAnalysis\nData Information Display\nAnalysis Communicaion\n\nReferences\n\nIntroduction\nAfghanistan is a country located in the south-central Asia. The country has been under a continuous conflict for 40 years and is again at war in 2021 itself. Before this it has been struggling with drought, hunger and along with it, the coronavirus disease (COVID-19) as well (Ghai, 2021).\nBelow, the analysis is focused on the COVID-19 numbers (cases and deaths) and its relation with the on-going crises.\n\n\n\nData Description\n\n\n\nData Source\nThe data set used in this blog has been extracted from World Health Organization-WHO. Which was in-turn collected by WHO via different sources. Till 21 March’20, WHO collected these numbers via official ministries of health websites, social media and through official communications under the International Health Regulations-IHR, 2005. From 22 March’20, WHO collected data through WHO dashboards and counts declared at the WHO headquarters regularly (WHO Coronavirus (COVID-19) Dashboard, 2021).\nVariable description\nThe data set contains the data from January’20 to December’21. The variables used in the analysis are given below with their description and variable type:\n\n\nVariables\n\n\nDescription\n\n\nType\n\n\nCountry\n\n\nCountry - Afghanistan\n\n\ncharacter\n\n\nNew_cases\n\n\nNew COVID-19 cases, calculated by subtracting ‘previous total cases before the date’ from ‘current total cases till date’\n\n\nnumeric\n\n\nCumulative_cases\n\n\nTotal COVID-19 cases till date\n\n\nnumeric\n\n\nNew_deaths\n\n\nNew COVID-19 deaths, calculated by subtracting ‘previous total deaths before the date’ from ‘current total deaths till date’\n\n\nnumeric\n\n\nCumulative_deaths\n\n\nTotal COVID-19 deaths till date\n\n\nnumeric\n\n\nYear\n\n\nYear of reporting to WHO\n\n\nnumeric\n\n\nMonth\n\n\nMonth of reporting to WHO\n\n\nnumeric\n\n\nAnalysis\nData Information Display\nAnalysis Communicaion\nReferences\nCovid19.who.int. 2021. WHO Coronavirus (COVID-19) Dashboard. [online] Available at: https://covid19.who.int/info/ [Accessed 1 September 2021].\nGhai, R., 2021. Taliban take-over: Afghanistan already battling drought, hunger, COVID-19. DownToEarth, [online]. URL: https://www.downtoearth.org.in/news/governance/taliban-take-over-afghanistan-already-battling-drought-hunger-covid-19-78475 [Accessed 1 September 2021].\n\n\n\n",
-      "last_modified": "2021-09-01T15:40:03+05:30"
+      "last_modified": "2021-09-01T15:55:10+05:30"
     },
     {
       "path": "blog2.html",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-09-01T15:32:16+05:30"
+      "last_modified": "2021-09-01T15:55:10+05:30"
     },
     {
       "path": "index.html",
       "title": "My Blog",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2021-09-01T15:32:16+05:30"
+      "last_modified": "2021-09-01T15:55:10+05:30"
     }
   ],
   "collections": ["posts/posts.json"]
