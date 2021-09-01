@@ -1,12 +1,16 @@
-name: "new"
-title: "My Blog"
+name: "Blog Entry 1 ETC5523"
+title: "Nishtha's Blog"
 description: |
   My Blog
 output_dir: "docs"
 navbar:
-  right:
-    - text: "Home"
-      href: index.html
+ right:
     - text: "About"
       href: about.html
+    - text: "Blogs"
+      menu:
+        - text: "Covid-19 Analysis: Afghanistan"
+          href: blog1.html
+        - text: "Blog entry 2"
+          href: blog2.html
 output: distill::distill_article
