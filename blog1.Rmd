@@ -1,0 +1,19 @@
+---
+title: "Covid-19 Analysis: Afghanistan"
+description: "This blog contains an analysis on the no. of cases, recoveris and deaths in the year 2020 and 2021 for Afghanistan and a comparison of these numbers with the time before and after the on-going crises in Afghanistan."
+date: "`r Sys.Date()`"
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2
+---
+
+# Introduction
+
+Afghanistan is a country located in the south-central Asia. The country has been under a continuous conflict for 40 years and is again at war in 2021 itself. Before this it has been struggling with drought, hunger and along with it, the coronavirus disease (COVID-19) as well (Ghai, 2021).
+
+Below, the analysis is focused on the COVID-19 numbers (cases and deaths) and its relation with the on-going crises.
+
+# References
+
+Ghai, R., 2021. Taliban take-over: Afghanistan already battling drought, hunger, COVID-19. DownToEarth, [online]. URL: https://www.downtoearth.org.in/news/governance/taliban-take-over-afghanistan-already-battling-drought-hunger-covid-19-78475 [Accessed 1 September 2021].
