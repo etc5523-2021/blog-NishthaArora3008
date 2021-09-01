@@ -1,6 +1,6 @@
 ---
 title: "Covid-19 Analysis: Afghanistan"
-description: "This blog contains an analysis on the no. of cases, recoveris and deaths in the year 2020 and 2021 for Afghanistan and a comparison of these numbers with the time before and after the on-going crises in Afghanistan."
+description: "This blog contains an analysis on the no. of cases and deaths in the year 2021 for Afghanistan and a comparison of these numbers with the time in the first half and the second half of the year i.e. before and during the on-going crises in Afghanistan."
 date: "`r Sys.Date()`"
 output:
   distill::distill_article:
@@ -20,6 +20,10 @@ library(tidyverse)
 library(lubridate)
 library(kableExtra)
 library(arsenal) 
+library(gt)
+library(sparkline)
+library(DT)
+library(formattable)
 ```
 
 # Data Description
@@ -27,11 +31,13 @@ library(arsenal)
 ```{r loadingdata, echo=FALSE}
 Afghan_data <- read_csv(here::here(("data/WHO-COVID-19-global-data.csv"))) %>% 
   select(Date_reported, Country, New_cases,	Cumulative_cases,	New_deaths,	Cumulative_deaths) %>% 
-  filter(Country == "Afghanistan") %>% 
+  filter(Country == "Afghanistan") %>%
   mutate(Year = year(Date_reported),
          Month= month(Date_reported)) %>% 
-  select(-c(Date_reported)) 
+  filter(Year == "2021") %>% 
+  select(-c(Date_reported))
 ```
+
 
 ## Data Source
 
@@ -72,15 +78,77 @@ kbl(Desc) %>%
 
 ## Data Information Display
 
+The table below displays the mean, SD (Standard deviation) and range of the numeric variables.
+
 ```{r, echo= FALSE,results='asis'}
-Summary <- tableby(~New_cases+Cumulative_cases+New_deaths+Cumulative_deaths, data = Afghan_data) 
-summary(Summary, text = TRUE, title = "Summary Statistics")
+variables <- c("New Cases", "New deaths", "Total cases", "Total deaths")
+min <- c(min(Afghan_data$New_cases), 
+           min(Afghan_data$New_deaths),
+           min(Afghan_data$Cumulative_cases),
+           min(Afghan_data$Cumulative_deaths))
+max <- c(max(Afghan_data$New_cases), 
+           max(Afghan_data$New_deaths),
+           max(Afghan_data$Cumulative_cases),
+           max(Afghan_data$Cumulative_deaths))
+mean <- c(round(mean(Afghan_data$New_cases),2), 
+           round(mean(Afghan_data$New_deaths),2),
+           round(mean(Afghan_data$Cumulative_cases),2),
+           round(mean(Afghan_data$Cumulative_deaths),2))
+sd <-c(round(sd(Afghan_data$New_cases),2), 
+           round(sd(Afghan_data$New_deaths),2),
+           round(sd(Afghan_data$Cumulative_cases),2),
+           round(sd(Afghan_data$Cumulative_deaths),2))
+description <- data.frame(variables, min, max, mean, sd)
+DT::datatable(description, options = list(pageLength = 4))
 ```
+
 
 
 ## Analysis Communicaion
 
 
+
+```{r}
+
+TO <- Afghan_data %>% 
+  group_by(Month) %>% 
+  summarise(
+            Sum_deaths = sum(New_deaths),
+            Sum_cases = sum(New_cases),
+            Deaths = spk_chr(New_deaths, type = "bar")) %>% 
+ datatable(escape = FALSE,
+            options = list(fnDrawCallback = htmlwidgets::JS('function(){HTMLWidgets.staticRender();}'))) %>% 
+  spk_add_deps()
+TO
+
+```
+```{r comm, echo=FALSE}
+TO <- Afghan_data %>% 
+  filter(Month %in% c("1","2","3","4")) %>% 
+  group_by(Month) %>% 
+  summarise(New_cases = sum(New_cases),
+            New_deaths = sum(New_deaths)) 
+gt(TO) %>% 
+  tab_header(title = "Monthly trend of new cases and deaths in 2021",
+           subtitle = "for Jan, Feb, March, April") %>% 
+tab_source_note(md("Source: World Health Organization")) %>% 
+  cols_label(
+  Month = html("Month<br>Year 2021"),
+  New_cases = html("Mean value of Cases<br>(per month)"),
+  New_deaths = html("Mean value of deaths<br>(per month)")
+  )
+```
+```{r}
+ 
+TT <- Afghan_data %>% 
+  group_by(Month) %>% 
+  summarise(New_cases = sum(New_cases),
+            New_deaths = sum(New_deaths)) %>% 
+  filter(Month %in% c("5","6","7","8")) %>% 
+  as.data.frame() %>%
+  formattable(list(area(col = 2:3) ~ color_tile("#F5B7B1", "#7DCEA0")))
+TT
+```
 
 
 # References
