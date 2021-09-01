@@ -19,6 +19,7 @@ library(readr)
 library(tidyverse)
 library(lubridate)
 library(kableExtra)
+library(arsenal) 
 ```
 
 # Data Description
@@ -26,6 +27,7 @@ library(kableExtra)
 ```{r loadingdata, echo=FALSE}
 Afghan_data <- read_csv(here::here(("data/WHO-COVID-19-global-data.csv"))) %>% 
   select(Date_reported, Country, New_cases,	Cumulative_cases,	New_deaths,	Cumulative_deaths) %>% 
+  filter(Country == "Afghanistan") %>% 
   mutate(Year = year(Date_reported),
          Month= month(Date_reported)) %>% 
   select(-c(Date_reported)) 
@@ -70,9 +72,15 @@ kbl(Desc) %>%
 
 ## Data Information Display
 
+```{r, echo= FALSE,results='asis'}
+Summary <- tableby(~New_cases+Cumulative_cases+New_deaths+Cumulative_deaths, data = Afghan_data) 
+summary(Summary, text = TRUE, title = "Summary Statistics")
+```
 
 
 ## Analysis Communicaion
+
+
 
 
 # References
