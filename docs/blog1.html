@@ -2094,6 +2094,9 @@ Blogs
 <a href="blog2.html">Blog entry 2</a>
 </div>
 </div>
+<a href="https://github.com/etc5523-2021/blog-NishthaArora3008">
+<i class="fab fa-github" aria-hidden="true"></i>
+</a>
 <a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
 </div>
 </nav>
@@ -2116,33 +2119,28 @@ Blogs
 <h3>Contents</h3>
 <ul>
 <li><a href="#introduction">Introduction</a></li>
-<li><a href="#data-description">Data Description</a>
-<ul>
-<li><a href="#data-source">Data Source</a></li>
-<li><a href="#variable-description">Variable description</a></li>
-</ul></li>
-<li><a href="#analysis">Analysis</a>
-<ul>
-<li><a href="#data-information-display">Data Information Display</a></li>
-<li><a href="#analysis-communicaion">Analysis Communicaion</a></li>
-</ul></li>
+<li><a href="#data-description">Data Description</a></li>
+<li><a href="#analysis">Analysis</a></li>
 <li><a href="#references">References</a></li>
 </ul>
 </nav>
 </div>
-<h1 id="introduction">Introduction</h1>
+<h2 id="introduction">Introduction</h2>
 <p>Afghanistan is a country located in the south-central Asia. The country has been under a continuous conflict for 40 years and is again at war in 2021 itself. Before this it has been struggling with drought, hunger and along with it, the coronavirus disease (COVID-19) as well (Ghai, 2021).</p>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="images/flag.png" width="70%" style="display: block; margin: auto;" /></p>
+</div>
 <p>Below, the analysis is focused on the COVID-19 numbers (cases and deaths) and its relation with the on-going crises.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<h1 id="data-description">Data Description</h1>
+<h2 id="data-description">Data Description</h2>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<h2 id="data-source">Data Source</h2>
+<h3 id="data-source">Data Source</h3>
 <p>The data set used in this blog has been extracted from <a href="https://covid19.who.int/info/">World Health Organization-WHO</a>. Which was in-turn collected by WHO via different sources. Till 21 March’20, WHO collected these numbers via official ministries of health websites, social media and through official communications under the International Health Regulations-IHR, 2005. From 22 March’20, WHO collected data through WHO dashboards and counts declared at the WHO headquarters regularly (WHO Coronavirus (COVID-19) Dashboard, 2021).</p>
-<h2 id="variable-description">Variable description</h2>
+<h3 id="variable-description">Variable description</h3>
 <p>The data set contains the data from January’20 to December’21. The variables used in the analysis are given below with their description and variable type:</p>
 <div class="layout-chunk" data-layout="l-body">
 <table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
@@ -2240,14 +2238,14 @@ numeric
 </tbody>
 </table>
 </div>
-<h1 id="analysis">Analysis</h1>
-<h2 id="data-information-display">Data Information Display</h2>
+<h2 id="analysis">Analysis</h2>
+<h3 id="data-information-display">Data Information Display</h3>
 <p>The table below displays the mean, SD (Standard deviation) and range of the numeric variables.</p>
 <div class="layout-chunk" data-layout="l-body">
-<div id="htmlwidget-ce985fbdb26363bb7d83" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ce985fbdb26363bb7d83">{"x":{"filter":"none","data":[["1","2","3","4"],["New Cases","New deaths","Total cases","Total deaths"],[0,0,52513,2201],[3243,159,153220,7118],[415.19,20.28,84249.89,3675.6],[581.72,27.86,37894.34,1741.74]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>variables<\/th>\n      <th>min<\/th>\n      <th>max<\/th>\n      <th>mean<\/th>\n      <th>sd<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":4,"columnDefs":[{"className":"dt-right","targets":[2,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[4,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-d0a331c05609975f485d" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d0a331c05609975f485d">{"x":{"filter":"none","data":[["1","2","3","4"],["New Cases","New deaths","Total cases","Total deaths"],[0,0,52513,2201],[3243,159,153220,7118],[415.19,20.28,84249.89,3675.6],[581.72,27.86,37894.34,1741.74]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>variables<\/th>\n      <th>min<\/th>\n      <th>max<\/th>\n      <th>mean<\/th>\n      <th>sd<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":4,"columnDefs":[{"className":"dt-right","targets":[2,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[4,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 </div>
-<h2 id="analysis-communicaion">Analysis Communicaion</h2>
+<h3 id="analysis-communicaion">Analysis Communicaion</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>TO</span> <span class='op'>&lt;-</span> <span class='va'>Afghan_data</span> <span class='op'>%&gt;%</span> 
@@ -2262,16 +2260,16 @@ numeric
 <span class='va'>TO</span>
 </code></pre>
 </div>
-<div id="htmlwidget-76ac3a323ba5fccb7383" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-76ac3a323ba5fccb7383">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8"],[1,2,3,4,5,6,7,8],[211,43,41,141,319,1927,1837,410],[2693,691,740,3291,12093,46821,28495,6066],["<span id=\"htmlwidget-24ae08e7ae97b31277c9\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-24ae08e7ae97b31277c9\">{\"x\":{\"values\":[12,10,10,9,7,7,9,4,7,13,11,13,7,6,10,12,3,4,3,8,9,7,3,5,7,4,0,8,2,1,0],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-d3c741ccd8d95222f092\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-d3c741ccd8d95222f092\">{\"x\":{\"values\":[4,1,1,1,0,1,2,3,1,4,1,5,3,0,0,1,0,2,0,0,2,1,2,1,2,4,1,0],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-b4d5362a9fb092a86c46\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-b4d5362a9fb092a86c46\">{\"x\":{\"values\":[1,2,0,0,3,0,0,2,0,0,0,3,0,3,2,1,0,2,0,0,1,1,2,0,1,0,2,1,2,4,8],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-46b2cb63d5ac79825e2e\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-46b2cb63d5ac79825e2e\">{\"x\":{\"values\":[5,6,1,1,11,4,0,4,5,0,0,8,0,3,1,2,4,0,7,3,8,4,4,7,10,10,6,13,7,7],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-ab9d492bd981fa638f5d\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-ab9d492bd981fa638f5d\">{\"x\":{\"values\":[6,6,5,6,6,10,9,10,3,12,12,3,8,9,3,9,3,6,11,10,10,10,10,10,24,19,14,12,18,20,25],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-feefa802133100ebcb1b\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-feefa802133100ebcb1b\">{\"x\":{\"values\":[29,34,27,34,36,41,42,64,54,51,56,37,78,85,71,0,159,92,96,92,93,78,73,86,67,75,56,80,64,77],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-d3c1eab768b6a4c445d8\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-d3c1eab768b6a4c445d8\">{\"x\":{\"values\":[91,86,59,92,84,77,55,62,84,77,86,67,58,74,60,89,26,49,66,53,27,32,32,36,32,52,38,62,38,62,31],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-ca81f8a690dc8a57dbcd\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-ca81f8a690dc8a57dbcd\">{\"x\":{\"values\":[29,37,30,32,28,15,18,11,28,25,17,10,12,10,11,4,6,12,4,7,11,5,6,7,7,3,8,2,6,7,2],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Month<\/th>\n      <th>Sum_deaths<\/th>\n      <th>Sum_cases<\/th>\n      <th>Deaths<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"fnDrawCallback":"function(){HTMLWidgets.staticRender();}","columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.fnDrawCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-a54e537277d8f84edaea" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a54e537277d8f84edaea">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8"],[1,2,3,4,5,6,7,8],[211,43,41,141,319,1927,1837,410],[2693,691,740,3291,12093,46821,28495,6066],["<span id=\"htmlwidget-75640682b3137f0f3f95\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-75640682b3137f0f3f95\">{\"x\":{\"values\":[12,10,10,9,7,7,9,4,7,13,11,13,7,6,10,12,3,4,3,8,9,7,3,5,7,4,0,8,2,1,0],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-f5601a2923aedd0dcc0b\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-f5601a2923aedd0dcc0b\">{\"x\":{\"values\":[4,1,1,1,0,1,2,3,1,4,1,5,3,0,0,1,0,2,0,0,2,1,2,1,2,4,1,0],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-34216eefacf8b03d2862\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-34216eefacf8b03d2862\">{\"x\":{\"values\":[1,2,0,0,3,0,0,2,0,0,0,3,0,3,2,1,0,2,0,0,1,1,2,0,1,0,2,1,2,4,8],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-3c120a937c510a4b0b28\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-3c120a937c510a4b0b28\">{\"x\":{\"values\":[5,6,1,1,11,4,0,4,5,0,0,8,0,3,1,2,4,0,7,3,8,4,4,7,10,10,6,13,7,7],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-48f39010cc9832025684\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-48f39010cc9832025684\">{\"x\":{\"values\":[6,6,5,6,6,10,9,10,3,12,12,3,8,9,3,9,3,6,11,10,10,10,10,10,24,19,14,12,18,20,25],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-1ae895287fb041719dfe\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-1ae895287fb041719dfe\">{\"x\":{\"values\":[29,34,27,34,36,41,42,64,54,51,56,37,78,85,71,0,159,92,96,92,93,78,73,86,67,75,56,80,64,77],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-c16011ef343fa3d24f3b\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-c16011ef343fa3d24f3b\">{\"x\":{\"values\":[91,86,59,92,84,77,55,62,84,77,86,67,58,74,60,89,26,49,66,53,27,32,32,36,32,52,38,62,38,62,31],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-dcb65d8e2854f6ca71c3\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-dcb65d8e2854f6ca71c3\">{\"x\":{\"values\":[29,37,30,32,28,15,18,11,28,25,17,10,12,10,11,4,6,12,4,7,11,5,6,7,7,3,8,2,6,7,2],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Month<\/th>\n      <th>Sum_deaths<\/th>\n      <th>Sum_cases<\/th>\n      <th>Deaths<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"fnDrawCallback":"function(){HTMLWidgets.staticRender();}","columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.fnDrawCallback"],"jsHooks":[]}</script>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<div id="dmddlnwdwg" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="qdrawjxive" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#dmddlnwdwg .gt_table {
+#qdrawjxive .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2296,7 +2294,7 @@ numeric
   border-left-color: #D3D3D3;
 }
 
-#dmddlnwdwg .gt_heading {
+#qdrawjxive .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2308,7 +2306,7 @@ numeric
   border-right-color: #D3D3D3;
 }
 
-#dmddlnwdwg .gt_title {
+#qdrawjxive .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2318,7 +2316,7 @@ numeric
   border-bottom-width: 0;
 }
 
-#dmddlnwdwg .gt_subtitle {
+#qdrawjxive .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2328,13 +2326,13 @@ numeric
   border-top-width: 0;
 }
 
-#dmddlnwdwg .gt_bottom_border {
+#qdrawjxive .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dmddlnwdwg .gt_col_headings {
+#qdrawjxive .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2349,7 +2347,7 @@ numeric
   border-right-color: #D3D3D3;
 }
 
-#dmddlnwdwg .gt_col_heading {
+#qdrawjxive .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2369,7 +2367,7 @@ numeric
   overflow-x: hidden;
 }
 
-#dmddlnwdwg .gt_column_spanner_outer {
+#qdrawjxive .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2381,15 +2379,15 @@ numeric
   padding-right: 4px;
 }
 
-#dmddlnwdwg .gt_column_spanner_outer:first-child {
+#qdrawjxive .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dmddlnwdwg .gt_column_spanner_outer:last-child {
+#qdrawjxive .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dmddlnwdwg .gt_column_spanner {
+#qdrawjxive .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2401,7 +2399,7 @@ numeric
   width: 100%;
 }
 
-#dmddlnwdwg .gt_group_heading {
+#qdrawjxive .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2423,7 +2421,7 @@ numeric
   vertical-align: middle;
 }
 
-#dmddlnwdwg .gt_empty_group_heading {
+#qdrawjxive .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2438,15 +2436,15 @@ numeric
   vertical-align: middle;
 }
 
-#dmddlnwdwg .gt_from_md > :first-child {
+#qdrawjxive .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dmddlnwdwg .gt_from_md > :last-child {
+#qdrawjxive .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dmddlnwdwg .gt_row {
+#qdrawjxive .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2465,7 +2463,7 @@ numeric
   overflow-x: hidden;
 }
 
-#dmddlnwdwg .gt_stub {
+#qdrawjxive .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2477,7 +2475,7 @@ numeric
   padding-left: 12px;
 }
 
-#dmddlnwdwg .gt_summary_row {
+#qdrawjxive .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2487,7 +2485,7 @@ numeric
   padding-right: 5px;
 }
 
-#dmddlnwdwg .gt_first_summary_row {
+#qdrawjxive .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2497,7 +2495,7 @@ numeric
   border-top-color: #D3D3D3;
 }
 
-#dmddlnwdwg .gt_grand_summary_row {
+#qdrawjxive .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2507,7 +2505,7 @@ numeric
   padding-right: 5px;
 }
 
-#dmddlnwdwg .gt_first_grand_summary_row {
+#qdrawjxive .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2517,11 +2515,11 @@ numeric
   border-top-color: #D3D3D3;
 }
 
-#dmddlnwdwg .gt_striped {
+#qdrawjxive .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dmddlnwdwg .gt_table_body {
+#qdrawjxive .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2530,7 +2528,7 @@ numeric
   border-bottom-color: #D3D3D3;
 }
 
-#dmddlnwdwg .gt_footnotes {
+#qdrawjxive .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2544,13 +2542,13 @@ numeric
   border-right-color: #D3D3D3;
 }
 
-#dmddlnwdwg .gt_footnote {
+#qdrawjxive .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#dmddlnwdwg .gt_sourcenotes {
+#qdrawjxive .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2564,41 +2562,41 @@ numeric
   border-right-color: #D3D3D3;
 }
 
-#dmddlnwdwg .gt_sourcenote {
+#qdrawjxive .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#dmddlnwdwg .gt_left {
+#qdrawjxive .gt_left {
   text-align: left;
 }
 
-#dmddlnwdwg .gt_center {
+#qdrawjxive .gt_center {
   text-align: center;
 }
 
-#dmddlnwdwg .gt_right {
+#qdrawjxive .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dmddlnwdwg .gt_font_normal {
+#qdrawjxive .gt_font_normal {
   font-weight: normal;
 }
 
-#dmddlnwdwg .gt_font_bold {
+#qdrawjxive .gt_font_bold {
   font-weight: bold;
 }
 
-#dmddlnwdwg .gt_font_italic {
+#qdrawjxive .gt_font_italic {
   font-style: italic;
 }
 
-#dmddlnwdwg .gt_super {
+#qdrawjxive .gt_super {
   font-size: 65%;
 }
 
-#dmddlnwdwg .gt_footnote_marks {
+#qdrawjxive .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -2717,7 +2715,7 @@ New_deaths
 </tbody>
 </table>
 </div>
-<h1 id="references">References</h1>
+<h2 id="references">References</h2>
 <p>Covid19.who.int. 2021. WHO Coronavirus (COVID-19) Dashboard. [online] Available at: <a href="https://covid19.who.int/info/" class="uri">https://covid19.who.int/info/</a> [Accessed 1 September 2021].</p>
 <p>Ghai, R., 2021. Taliban take-over: Afghanistan already battling drought, hunger, COVID-19. DownToEarth, [online]. URL: <a href="https://www.downtoearth.org.in/news/governance/taliban-take-over-afghanistan-already-battling-drought-hunger-covid-19-78475" class="uri">https://www.downtoearth.org.in/news/governance/taliban-take-over-afghanistan-already-battling-drought-hunger-covid-19-78475</a> [Accessed 1 September 2021].</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
@@ -2735,7 +2733,11 @@ New_deaths
 <div class="appendix-bottom"></div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
+<div class="distill-site-nav distill-site-footer">
+<p>Communicating with Data (ETC5523)- Semester 2, Master of Business Analytics</p>
+</div>
 <!--/radix_placeholder_navigation_after_body-->
+
 
 </body>
 

@@ -1,7 +1,5 @@
 name: "Blog Entry 1 ETC5523"
 title: "Nishtha's Blog"
-description: |
-  My Blog
 output_dir: "docs"
 navbar:
  right:
@@ -13,4 +11,6 @@ navbar:
           href: blog1.html
         - text: "Blog entry 2"
           href: blog2.html
+    - icon: fab fa-github
+      href: https://github.com/etc5523-2021/blog-NishthaArora3008
 output: distill::distill_article

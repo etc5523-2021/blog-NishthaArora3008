@@ -1,14 +1,13 @@
 ---
-title: "Welcome to My Blog"
+title: "Welcome visitor! Thanks so much for stopping by."
 description: |
-  Welcome to our new blog, My Blog. We hope you enjoy 
-  reading what we have to say!
+  **Telling stories through data here, are you ready to listen?**
 author:
-  - name: Nora Jones 
-    url: https://example.com/norajones
-    affiliation: Spacely Sprockets
-    affiliation_url: https://example.com/spacelysprokets
-date: 09-01-2021
+  - name: Nishtha Arora 
+    url: https://github.com/etc5523-2021/blog-NishthaArora3008
+    affiliation: Monash University
+    affiliation_url: https://www.monash.edu
+date: "`r Sys.Date()`"
 output:
   distill::distill_article:
     self_contained: false
@@ -16,11 +15,14 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
-
-# Learn more about creating blogs with Distill at:
-# https://rstudio.github.io/distill/blog.html
-
 ```
 
+- The purpose of this blog is to share my story of analysis via data, using interactive tables and plots.
+
+- This blog consists of COVID-19 data analysis for Afghanistan as of now. Please click on 'Blogs' (top right) to navigate to the reading material i.e. COVID-19 Analysis: Afghanistan.
+
+Thank you!
+
+Enjoy reading.
 
 

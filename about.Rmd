@@ -1,9 +1,19 @@
 ---
-title: "About this blog"
-description: |
-  Some additional details about the blog
+title: "About the author and blog"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
+## Author
+
+The Author Nishtha Arora is a first year masters student in Business Analytics at Monash University,Clayton, Australia.
+
+```{r, echo = F, out.width = '30%'}
+knitr::include_graphics("images/me.JPG")
+```
+
+## Blog
+
+The blog consists of 2 blog entries, out of which 1 is visible as of now, i.e. 'COVID-19 Analysis: Afghanistan'.

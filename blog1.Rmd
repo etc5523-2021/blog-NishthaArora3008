@@ -8,9 +8,13 @@ output:
     toc_depth: 2
 ---
 
-# Introduction
+## Introduction
 
 Afghanistan is a country located in the south-central Asia. The country has been under a continuous conflict for 40 years and is again at war in 2021 itself. Before this it has been struggling with drought, hunger and along with it, the coronavirus disease (COVID-19) as well (Ghai, 2021).
+
+```{r, echo = F, out.width = '70%', fig.align='center'}
+knitr::include_graphics("images/flag.png")
+```
 
 Below, the analysis is focused on the COVID-19 numbers (cases and deaths) and its relation with the on-going crises.
 
@@ -26,7 +30,7 @@ library(DT)
 library(formattable)
 ```
 
-# Data Description
+## Data Description
 
 ```{r loadingdata, echo=FALSE}
 Afghan_data <- read_csv(here::here(("data/WHO-COVID-19-global-data.csv"))) %>% 
@@ -39,11 +43,11 @@ Afghan_data <- read_csv(here::here(("data/WHO-COVID-19-global-data.csv"))) %>%
 ```
 
 
-## Data Source
+### Data Source
 
 The data set used in this blog has been extracted from [World Health Organization-WHO](https://covid19.who.int/info/). Which was in-turn collected by WHO via different sources. Till 21 March'20, WHO collected these numbers via official ministries of health websites, social media and through official communications under the International Health Regulations-IHR, 2005. From 22 March'20, WHO collected data through WHO dashboards and counts declared at the WHO headquarters regularly (WHO Coronavirus (COVID-19) Dashboard, 2021).
 
-## Variable description
+### Variable description
 
 The data set contains the data from January'20 to December'21. The variables used in the analysis are given below with their description and variable type: 
 
@@ -74,9 +78,9 @@ kbl(Desc) %>%
   kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
-# Analysis
+## Analysis
 
-## Data Information Display
+### Data Information Display
 
 The table below displays the mean, SD (Standard deviation) and range of the numeric variables.
 
@@ -104,7 +108,7 @@ DT::datatable(description, options = list(pageLength = 4))
 
 
 
-## Analysis Communicaion
+### Analysis Communicaion
 
 
 
@@ -151,7 +155,7 @@ TT
 ```
 
 
-# References
+## References
 
 Covid19.who.int. 2021. WHO Coronavirus (COVID-19) Dashboard. [online] Available at: <https://covid19.who.int/info/> [Accessed 1 September 2021].
 

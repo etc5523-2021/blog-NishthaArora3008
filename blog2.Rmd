@@ -1,0 +1,8 @@
+---
+title: "Blog2"
+description: "WRITE HERE"
+output:
+  distill::distill_article:
+    toc: true
+    toc_depth: 2
+---
