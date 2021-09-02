@@ -1,22 +1,13 @@
 ---
 title: "Covid-19 Analysis: Afghanistan"
-description: "This blog contains an analysis on the no. of cases and deaths in the year 2021 for Afghanistan and a comparison of these numbers with the time in the first half and the second half of the year till noww (2021) i.e. before and during the on-going crises in Afghanistan."
-date: "`r Sys.Date()`"
+description: "This blog contains an analysis on the no. of cases and deaths in the year 2021 for Afghanistan and a comparison of these numbers with the time in the first half and the second half of the year till now (2021) i.e. before and during the on-going crises in Afghanistan."
+author:
+  - name: Nishtha Arora
+date: "2021-09-01"
 output:
   distill::distill_article:
     toc: true
-    toc_depth: 2
 ---
-
-## Introduction
-
-Afghanistan is a country located in the south-central Asia. The country has been under a continuous conflict for 40 years and is again at war in 2021 itself. Before this it has been struggling with drought, hunger and along with it, the coronavirus disease (COVID-19) as well (Ghai, 2021).
-
-```{r global, echo = F, out.width = '70%', fig.align='center'}
-knitr::include_graphics("images/flag.png")
-```
-
-Below, the analysis is focused on the COVID-19 numbers of 2021 (cases and deaths) and its relation with the on-going crises.
 
 ```{r loadinglibraries, echo=FALSE}
 library(readr)
@@ -28,8 +19,6 @@ library(DT)
 library(formattable)
 ```
 
-## Data Description
-
 ```{r loadingdata, echo=FALSE}
 Afghan_data <- read_csv(here::here(("data/WHO-COVID-19-global-data.csv"))) %>% 
   select(Date_reported, Country, New_cases, New_deaths) %>% 
@@ -40,18 +29,31 @@ Afghan_data <- read_csv(here::here(("data/WHO-COVID-19-global-data.csv"))) %>%
   select(-c(Date_reported))
 ```
 
-### Data Source
+# Introduction and Backgroud
+
+Afghanistan is a country located in the south-central Asia. The country has been under a continuous conflict for 40 years and is again at war in 2021 itself. Before this it has been struggling with drought, hunger and along with it, the coronavirus disease (COVID-19) as well (Ghai, 2021).
+
+## The Afghanistan Crises
+
+By June 2021, Taliban (Islamic Emirate of Afghanistan) tried to take over Afghanistan and this came into limelight by mid July'21. This lead to a war-like scenario and included a series of events that brought a lot of people in great crowds. Two of such events were burning homes and other public properly, leaving people on the streets together and in August 2021, as the rescue planes were sent by The USA, huge crowds were observed at the airports.
+
+```{r global, echo = F, out.width = '70%', fig.align='center'}
+knitr::include_graphics("images/flag.png")
+```
+
+Below, the analysis is focused on the COVID-19 numbers of 2021 (cases and deaths) and its relation with the on-going crises.
+
+# Data Description
+
+## Data Source
 
 - The data set used in this blog has been extracted from [World Health Organization-WHO](https://covid19.who.int/info/). Which was in-turn collected by WHO via different sources. 
 
-- Till 21 March'20, WHO collected these numbers via official ministries of health websites, social media and through official communications under the International Health Regulations-IHR, 2005. 
+- Till 21 March'20, WHO collected these numbers via official ministries of health websites, social media and through official communications under the International Health Regulations-IHR, 2005. From 22 March'20, WHO collected data through WHO dashboards and counts declared at the WHO headquarters regularly (WHO Coronavirus (COVID-19) Dashboard, 2021).
 
-- From 22 March'20, WHO collected data through WHO dashboards and counts declared at the WHO headquarters regularly (WHO Coronavirus (COVID-19) Dashboard, 2021).
-
-### Variable description
+## Variable description
 
 The data set used for the analysis contains the data from January'21 to August'21. The variables used in the analysis are given below with their description and variable type: 
-
 ```{r identifyingtypes, include=FALSE}
 str(Afghan_data)
 ```
@@ -71,13 +73,12 @@ Desc <- data.frame(Variables = names(Afghan_data),
                             "numeric",
                             "numeric"))
 
-kbl(Desc) %>%
+knitr::kable(Desc,
+             caption = "Description of Variables used") %>% 
   kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
-## Analysis
-
-### Data Information Display
+## Summary Statistics
 
 The table below displays the minimum values, maximum value, mean and SD (Standard deviation) of the numeric variables (other than year and month).
 
@@ -92,15 +93,16 @@ mean <- c(round(mean(Afghan_data$New_cases),2),
 sd <-c(round(sd(Afghan_data$New_cases),2), 
            round(sd(Afghan_data$New_deaths),2))
 description <- data.frame(variables, min, max, mean, sd)
-DT::datatable(description, options = list(pageLength = 4))
+DT::datatable(description, options = list(pageLength = 4), caption = "Table 2: Variable Statistics")
 ```
 
+# Analysis
 
-### Analysis Communicaion
+## Analysis Communicaion
 
 Afghanistan has been under a war in the later months of 2021 till now (i.e. till Aug'21). The goal of the analysis is to find out if the crises has had an impact on the COVID-19 surge in the country as well.
 
-#### COVID-19 statistics from Jan'21-Aug'21
+### COVID-19 statistics from Jan'21-Aug'21
 
 The table below, shows:
 
@@ -116,11 +118,11 @@ The table below, shows:
 TO <- Afghan_data %>% 
   group_by(Month) %>% 
   summarise(
-            Sum_deaths = sum(New_deaths),
             Sum_cases = sum(New_cases),
+            Sum_deaths = sum(New_deaths),
             Deaths = spk_chr(New_deaths, type = "bar")) %>% 
  datatable(escape = FALSE,
-            options = list(fnDrawCallback = htmlwidgets::JS('function(){HTMLWidgets.staticRender();}'))) %>% 
+            options = list(fnDrawCallback = htmlwidgets::JS('function(){HTMLWidgets.staticRender();}')), caption = "Table 3: Trend of cases and deaths in 2021") %>% 
   spk_add_deps()
 TO
 ```
@@ -128,9 +130,7 @@ It is observed that:
 
 In January and April, total deaths and cases are comparatively higher when compared to February and March. But in May we observe that the cases have rapidly increased whose impact (deaths) is seen in June, and further June having a high crease of cases and gradual decrease till August.
 
-#### COVID-19 statistics highlighted from May'21-August'21.
-
-Here, the statistics for latest 4 months is highlighted.
+Here, from the above table itself, the statistics for latest 4 months is highlighted below.
 
 ```{r part2, echo=FALSE}
 TT <- Afghan_data %>% 
@@ -145,16 +145,47 @@ TT
 
 Clearly a high in numbers for cases and deaths is observed in June and July in Afghanistan and a sudden decrease in August.
 
-## Conclusion
+# Conclusion
 
-It is evident that by observing the numbers throughout the year, something unusual has happened in Afghanistan after April that has lead to a sudden hike in cases and deaths simultaneously. And this particular event definitely involves crowd gatherings, that being one of the major causes for increase in COVID-19.
+It is evident that by observing the numbers throughout the year, something unusual has happened in Afghanistan after May that has lead to a sudden hike in cases and deaths simultaneously. And this particular event definitely involves crowd gatherings, that being one of the major causes for increase in COVID-19.
 
 Hence, the crises in Afghanistan has caused an impact on COVID-19. As the crises comes to an end in August, we see that the cases and deaths have also dropped significantly from July to August.
 
-## References
+# References
 
-Covid19.who.int. 2021. WHO Coronavirus (COVID-19) Dashboard. [online] Available at: <https://covid19.who.int/info/> [Accessed 1 September 2021].
+[1] Covid19.who.int. 2021. WHO Coronavirus (COVID-19) Dashboard. [online] Available at: <https://covid19.who.int/info/> [Accessed 1 September 2021].
 
-Ghai, R., 2021. Taliban take-over: Afghanistan already battling drought, hunger, COVID-19. DownToEarth, [online]. URL: https://www.downtoearth.org.in/news/governance/taliban-take-over-afghanistan-already-battling-drought-hunger-covid-19-78475 [Accessed 1 September 2021].
+[2] Garrett Grolemund, Hadley Wickham (2011). Dates and Times Made Easy
+with lubridate. Journal of Statistical Software, 40(3), 1-25. URL
+https://www.jstatsoft.org/v40/i03/.
+
+[3] GitHub: Where the world builds software. (2021). Retrieved 2 June 2021, from https://github.com/
+
+[4] Ghai, R., 2021. Taliban take-over: Afghanistan already battling drought, hunger, COVID-19. DownToEarth, [online]. URL: https://www.downtoearth.org.in/news/governance/taliban-take-over-afghanistan-already-battling-drought-hunger-covid-19-78475 [Accessed 1 September 2021].
+
+[5] Hadley Wickham and Jim Hester (2021). readr: Read Rectangular Text
+Data. R package version 2.0.0. https://CRAN.R-project.org/package=readr
+
+[6] Hao Zhu (2021). kableExtra: Construct Complex Table with 'kable' and Pipe
+Syntax. R package version 1.3.4. https://CRAN.R-project.org/package=kableExtra
+
+[7] Kun Ren and Kenton Russell (2021). formattable: Create 'Formattable'
+Data Structures. R package version 0.2.1.
+https://CRAN.R-project.org/package=formattable
+
+[8] Ramnath Vaidyanathan, Kent Russell and Gareth Watts (2016). sparkline:
+'jQuery' Sparkline 'htmlwidget'. R package version 2.0.
+https://CRAN.R-project.org/package=sparkline
+
+[9] RStudio Team (2020). RStudio: Integrated Development for R. RStudio, PBC, Boston, MA URL http://www.rstudio.com/.
+
+[10] Tanaka, E., 2021. ETC5523: Communicating with Data, Monash University.
+
+[11] Wickham et al., (2019). Welcome to the tidyverse. Journal of Open
+Source Software, 4(43), 1686, https://doi.org/10.21105/joss.01686
+  
+[12] Yihui Xie, Joe Cheng and Xianying Tan (2021). DT: A Wrapper of the
+JavaScript Library 'DataTables'. R package version 0.18.
+https://CRAN.R-project.org/package=DT
 
 

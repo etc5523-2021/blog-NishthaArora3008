@@ -2,7 +2,7 @@
 
 
 This is the blog of [Nishtha Arora].
-The URL of this blog is [file:///Users/nishthaarora/Downloads/blog-NishthaArora3008/docs/blog1.html].
+The URL of this blog is [https://etc5523-2021.github.io/blog-NishthaArora3008/].
 
 ## Blog Post 1
 

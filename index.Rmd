@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - The purpose of this blog is to share my story of analysis via data, using interactive tables and plots.
 
-- This blog consists of COVID-19 data analysis for Afghanistan as of now. Please click on 'Blogs' (top right) to navigate to the reading material i.e. COVID-19 Analysis: Afghanistan.
+- Please click on 'Blogs' (top right) to navigate to the reading material.
 
 Thank you!
 
