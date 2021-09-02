@@ -128,11 +128,11 @@ It is observed that:
 
 In January and April, total deaths and cases are comparatively higher when compared to February and March. But in May we observe that the cases have rapidly increased whose impact (deaths) is seen in June, and further June having a high crease of cases and gradual decrease till August.
 
-#### COVID-19 statistics highlighted from May'21-April'21.
+#### COVID-19 statistics highlighted from May'21-August'21.
 
 Here, the statistics for latest 4 months is highlighted.
 
-```{r}
+```{r part2, echo=FALSE}
 TT <- Afghan_data %>% 
   group_by(Month) %>% 
   summarise(New_cases = sum(New_cases),
