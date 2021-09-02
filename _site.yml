@@ -13,4 +13,6 @@ navbar:
           href: blog2.html
     - icon: fab fa-github
       href: https://github.com/etc5523-2021/blog-NishthaArora3008
-output: distill::distill_article
+output:
+  distill::distill_article:
+    css: custom-styles.css

@@ -1,6 +1,6 @@
 ---
 title: "Covid-19 Analysis: Afghanistan"
-description: "This blog contains an analysis on the no. of cases and deaths in the year 2021 for Afghanistan and a comparison of these numbers with the time in the first half and the second half of the year i.e. before and during the on-going crises in Afghanistan."
+description: "This blog contains an analysis on the no. of cases and deaths in the year 2021 for Afghanistan and a comparison of these numbers with the time in the first half and the second half of the year till noww (2021) i.e. before and during the on-going crises in Afghanistan."
 date: "`r Sys.Date()`"
 output:
   distill::distill_article:
@@ -12,19 +12,17 @@ output:
 
 Afghanistan is a country located in the south-central Asia. The country has been under a continuous conflict for 40 years and is again at war in 2021 itself. Before this it has been struggling with drought, hunger and along with it, the coronavirus disease (COVID-19) as well (Ghai, 2021).
 
-```{r, echo = F, out.width = '70%', fig.align='center'}
+```{r global, echo = F, out.width = '70%', fig.align='center'}
 knitr::include_graphics("images/flag.png")
 ```
 
-Below, the analysis is focused on the COVID-19 numbers (cases and deaths) and its relation with the on-going crises.
+Below, the analysis is focused on the COVID-19 numbers of 2021 (cases and deaths) and its relation with the on-going crises.
 
 ```{r loadinglibraries, echo=FALSE}
 library(readr)
 library(tidyverse)
 library(lubridate)
 library(kableExtra)
-library(arsenal) 
-library(gt)
 library(sparkline)
 library(DT)
 library(formattable)
@@ -34,7 +32,7 @@ library(formattable)
 
 ```{r loadingdata, echo=FALSE}
 Afghan_data <- read_csv(here::here(("data/WHO-COVID-19-global-data.csv"))) %>% 
-  select(Date_reported, Country, New_cases,	Cumulative_cases,	New_deaths,	Cumulative_deaths) %>% 
+  select(Date_reported, Country, New_cases, New_deaths) %>% 
   filter(Country == "Afghanistan") %>%
   mutate(Year = year(Date_reported),
          Month= month(Date_reported)) %>% 
@@ -42,14 +40,17 @@ Afghan_data <- read_csv(here::here(("data/WHO-COVID-19-global-data.csv"))) %>%
   select(-c(Date_reported))
 ```
 
-
 ### Data Source
 
-The data set used in this blog has been extracted from [World Health Organization-WHO](https://covid19.who.int/info/). Which was in-turn collected by WHO via different sources. Till 21 March'20, WHO collected these numbers via official ministries of health websites, social media and through official communications under the International Health Regulations-IHR, 2005. From 22 March'20, WHO collected data through WHO dashboards and counts declared at the WHO headquarters regularly (WHO Coronavirus (COVID-19) Dashboard, 2021).
+- The data set used in this blog has been extracted from [World Health Organization-WHO](https://covid19.who.int/info/). Which was in-turn collected by WHO via different sources. 
+
+- Till 21 March'20, WHO collected these numbers via official ministries of health websites, social media and through official communications under the International Health Regulations-IHR, 2005. 
+
+- From 22 March'20, WHO collected data through WHO dashboards and counts declared at the WHO headquarters regularly (WHO Coronavirus (COVID-19) Dashboard, 2021).
 
 ### Variable description
 
-The data set contains the data from January'20 to December'21. The variables used in the analysis are given below with their description and variable type: 
+The data set used for the analysis contains the data from January'21 to August'21. The variables used in the analysis are given below with their description and variable type: 
 
 ```{r identifyingtypes, include=FALSE}
 str(Afghan_data)
@@ -59,16 +60,12 @@ str(Afghan_data)
 Desc <- data.frame(Variables = names(Afghan_data),
                           Description = c("Country - Afghanistan",
                                           "New COVID-19 cases, calculated by subtracting 'previous total cases before the date' from 'current total cases till date'",
-                                          "Total COVID-19 cases till date",
                                           "New COVID-19 deaths, calculated by subtracting 'previous total deaths before the date' from 'current total deaths till date'",
-                                          "Total COVID-19 deaths till date",
                                           "Year of reporting to WHO",
                                           "Month of reporting to WHO"
                                         
                                           ),
                    Type = c("character",
-                            "numeric",
-                            "numeric",
                             "numeric",
                             "numeric",
                             "numeric",
@@ -82,38 +79,40 @@ kbl(Desc) %>%
 
 ### Data Information Display
 
-The table below displays the mean, SD (Standard deviation) and range of the numeric variables.
+The table below displays the minimum values, maximum value, mean and SD (Standard deviation) of the numeric variables (other than year and month).
 
 ```{r, echo= FALSE,results='asis'}
-variables <- c("New Cases", "New deaths", "Total cases", "Total deaths")
+variables <- c("New Cases", "New deaths")
 min <- c(min(Afghan_data$New_cases), 
-           min(Afghan_data$New_deaths),
-           min(Afghan_data$Cumulative_cases),
-           min(Afghan_data$Cumulative_deaths))
+           min(Afghan_data$New_deaths))
 max <- c(max(Afghan_data$New_cases), 
-           max(Afghan_data$New_deaths),
-           max(Afghan_data$Cumulative_cases),
-           max(Afghan_data$Cumulative_deaths))
+           max(Afghan_data$New_deaths))
 mean <- c(round(mean(Afghan_data$New_cases),2), 
-           round(mean(Afghan_data$New_deaths),2),
-           round(mean(Afghan_data$Cumulative_cases),2),
-           round(mean(Afghan_data$Cumulative_deaths),2))
+           round(mean(Afghan_data$New_deaths),2))
 sd <-c(round(sd(Afghan_data$New_cases),2), 
-           round(sd(Afghan_data$New_deaths),2),
-           round(sd(Afghan_data$Cumulative_cases),2),
-           round(sd(Afghan_data$Cumulative_deaths),2))
+           round(sd(Afghan_data$New_deaths),2))
 description <- data.frame(variables, min, max, mean, sd)
 DT::datatable(description, options = list(pageLength = 4))
 ```
 
 
-
 ### Analysis Communicaion
 
+Afghanistan has been under a war in the later months of 2021 till now (i.e. till Aug'21). The goal of the analysis is to find out if the crises has had an impact on the COVID-19 surge in the country as well.
 
+#### COVID-19 statistics from Jan'21-Aug'21
 
-```{r}
+The table below, shows:
 
+- The months of 2021 i.e. '1 to 8' representing 'January to August' respectively.
+
+- Total no. of deaths(sum) in the corresponding month.
+
+- Total no. of cases(sum) in the corresponding month.
+
+- A bar plot representing a trend of deaths in the corresponding month.
+
+```{r analysis, echo =FALSE}
 TO <- Afghan_data %>% 
   group_by(Month) %>% 
   summarise(
@@ -124,36 +123,33 @@ TO <- Afghan_data %>%
             options = list(fnDrawCallback = htmlwidgets::JS('function(){HTMLWidgets.staticRender();}'))) %>% 
   spk_add_deps()
 TO
+```
+It is observed that:
 
-```
-```{r comm, echo=FALSE}
-TO <- Afghan_data %>% 
-  filter(Month %in% c("1","2","3","4")) %>% 
-  group_by(Month) %>% 
-  summarise(New_cases = sum(New_cases),
-            New_deaths = sum(New_deaths)) 
-gt(TO) %>% 
-  tab_header(title = "Monthly trend of new cases and deaths in 2021",
-           subtitle = "for Jan, Feb, March, April") %>% 
-tab_source_note(md("Source: World Health Organization")) %>% 
-  cols_label(
-  Month = html("Month<br>Year 2021"),
-  New_cases = html("Mean value of Cases<br>(per month)"),
-  New_deaths = html("Mean value of deaths<br>(per month)")
-  )
-```
+In January and April, total deaths and cases are comparatively higher when compared to February and March. But in May we observe that the cases have rapidly increased whose impact (deaths) is seen in June, and further June having a high crease of cases and gradual decrease till August.
+
+#### COVID-19 statistics highlighted from May'21-April'21.
+
+Here, the statistics for latest 4 months is highlighted.
+
 ```{r}
- 
 TT <- Afghan_data %>% 
   group_by(Month) %>% 
   summarise(New_cases = sum(New_cases),
             New_deaths = sum(New_deaths)) %>% 
   filter(Month %in% c("5","6","7","8")) %>% 
   as.data.frame() %>%
-  formattable(list(area(col = 2:3) ~ color_tile("#F5B7B1", "#7DCEA0")))
+  formattable(list(area(col = 2:3) ~ color_tile("#7EDCDE", "#7DCEA0")))
 TT
 ```
 
+Clearly a high in numbers for cases and deaths is observed in June and July in Afghanistan and a sudden decrease in August.
+
+## Conclusion
+
+It is evident that by observing the numbers throughout the year, something unusual has happened in Afghanistan after April that has lead to a sudden hike in cases and deaths simultaneously. And this particular event definitely involves crowd gatherings, that being one of the major causes for increase in COVID-19.
+
+Hence, the crises in Afghanistan has caused an impact on COVID-19. As the crises comes to an end in August, we see that the cases and deaths have also dropped significantly from July to August.
 
 ## References
 

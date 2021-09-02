@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 The Author Nishtha Arora is a first year masters student in Business Analytics at Monash University,Clayton, Australia.
 
-```{r, echo = F, out.width = '30%'}
+```{r, echo = F, out.width = '20%'}
 knitr::include_graphics("images/me.JPG")
 ```
 

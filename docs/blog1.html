@@ -88,7 +88,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_meta_tags-->
   <title>Nishtha's Blog: Covid-19 Analysis: Afghanistan</title>
 
-  <meta property="description" itemprop="description" content="This blog contains an analysis on the no. of cases and deaths in the year 2021 for Afghanistan and a comparison of these numbers with the time in the first half and the second half of the year i.e. before and during the on-going crises in Afghanistan."/>
+  <meta property="description" itemprop="description" content="This blog contains an analysis on the no. of cases and deaths in the year 2021 for Afghanistan and a comparison of these numbers with the time in the first half and the second half of the year till noww (2021) i.e. before and during the on-going crises in Afghanistan."/>
 
 
   <!--  https://schema.org/Article -->
@@ -98,20 +98,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
   <meta property="og:title" content="Nishtha&#39;s Blog: Covid-19 Analysis: Afghanistan"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="This blog contains an analysis on the no. of cases and deaths in the year 2021 for Afghanistan and a comparison of these numbers with the time in the first half and the second half of the year i.e. before and during the on-going crises in Afghanistan."/>
+  <meta property="og:description" content="This blog contains an analysis on the no. of cases and deaths in the year 2021 for Afghanistan and a comparison of these numbers with the time in the first half and the second half of the year till noww (2021) i.e. before and during the on-going crises in Afghanistan."/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Nishtha&#39;s Blog"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
   <meta property="twitter:title" content="Nishtha&#39;s Blog: Covid-19 Analysis: Afghanistan"/>
-  <meta property="twitter:description" content="This blog contains an analysis on the no. of cases and deaths in the year 2021 for Afghanistan and a comparison of these numbers with the time in the first half and the second half of the year i.e. before and during the on-going crises in Afghanistan."/>
+  <meta property="twitter:description" content="This blog contains an analysis on the no. of cases and deaths in the year 2021 for Afghanistan and a comparison of these numbers with the time in the first half and the second half of the year till noww (2021) i.e. before and during the on-going crises in Afghanistan."/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Covid-19 Analysis: Afghanistan"]},{"type":"character","attributes":{},"value":["This blog contains an analysis on the no. of cases and deaths in the year 2021 for Afghanistan and a comparison of these numbers with the time in the first half and the second half of the year i.e. before and during the on-going crises in Afghanistan."]},{"type":"character","attributes":{},"value":["2021-09-02"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Covid-19 Analysis: Afghanistan"]},{"type":"character","attributes":{},"value":["This blog contains an analysis on the no. of cases and deaths in the year 2021 for Afghanistan and a comparison of these numbers with the time in the first half and the second half of the year till noww (2021) i.e. before and during the on-going crises in Afghanistan."]},{"type":"character","attributes":{},"value":["2021-09-02"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["toc","toc_depth"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[2]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2060,8 +2060,793 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
   <script src="site_libs/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
+  <style type="text/css">
+  html, body {
+  	font-size:12px; 
+  	line-height:18px;
+  	height: 100%;
+   }
+  body {background: #f9f9f9 url(../img/page-bg-1.jpg);}
+
+  .main-container {
+  	height:auto; 
+  	height: 100%;
+  	min-height: 100%;
+  }
+
+  @media (max-width: 767px) {
+    body { padding-right: 0px; padding-left: 0px; }
+    .container {margin-right: 20px; margin-left: 20px;}
+   }
+
+  /***** Titles and Headings *****/
+  h1, h2, h3, h4 , h5, h6 {
+  	font-family: "Oswald", sans-serif; 
+  	font-weight: normal;
+  	text-transform:uppercase; 
+  }	
+  h1, h2, h3, h4, h5 {text-shadow: 1px 1px 0 #fdfdfd, 2px 2px 0 rgba(81, 81, 81, 0.5), 0 0 1px #fdfdfd;}
+  h1.title-bg, h2.title-bg, h3.title-bg, h4.title-bg , h5.title-bg, h6.title-bg {
+  	background:#f8f8f8; 
+  	padding:10px 5px;
+  	margin: 0px 0px 20px 0px;
+  	border-bottom: 1px dotted #a9a9a9;
+  	border-top: 1px dotted #a9a9a9;
+  }
+  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {color:#7f7f7f;}
+  h2 small {font-size: 30px;}
+  h5 small {font-size: 14px;}
+  h6 small {font-size: 12px;}
+
+  h5.title-bg button {
+  	float: right; 
+  	text-transform: none;
+  	margin-left:5px;
+  }
+
+  /***** Links *****/
+  a, a:hover { color:#d8450b; }
+
+  /***** Misc *****/
+  i {margin-right: 3px;}
+  p {margin-bottom: 20px;}
+  blockquote {
+  	font-size:16px; 
+  	line-height:24px; 
+  	font-family:Georgia, "Calibri", Times, serif; 
+  	font-style:italic;
+  	border-left: 5px solid #999;
+  }
+  blockquote.pull-right {border-right: 5px solid #999;}
+
+
+  /**************************************
+  / Header
+  **************************************/
+  .logo { margin-top:40px; }
+  .logo img { padding-right:20px; }
+  .logo h5 { display: inline-block; }
+  .headline { margin-bottom:20px; }
+
+  /* Landscape phones and down */
+  @media (max-width: 480px) {
+  	.logo, .navigation {text-align: center;}
+  	.row.header {margin-bottom: 30px;}
+  	.logo h5 {display: block;}
+  }
+  /* Portrait tablet to landscape and desktop */
+  @media (min-width: 768px) and (max-width: 1199px) {
+  	.headline .lead {display: none;}
+  }
+
+  .navigation { margin-top:40px; }
+  .navigation .navbar { 
+  	float:right; background:#f8f8f8;
+  	border-bottom: 1px dotted #a9a9a9;
+  	border-top: 1px dotted #a9a9a9;
+  }
+  .navbar .nav > li > a { 
+  	font-family: "arial", sans-serif; 
+  	font-weight: normal;
+  	text-shadow: none; 
+  	text-transform:uppercase; 
+  	font-size:12px; 
+  	padding: 10px 15px 10px;
+  }
+
+  /* Portrait tablet */
+  @media (min-width: 768px) and (max-width: 979px) {
+  	.navbar .nav > li > a {padding: 10px 10px 10px;}
+  }
+
+  .navbar .nav > .active > a,
+  .navbar .nav > .active > a:hover,
+  .navbar .nav > .active > a:focus {
+  	color:#FFF; 
+  	background-color:#d8450b;
+  	-webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;  
+  }
+
+  .navbar .nav li.dropdown.open > .dropdown-toggle,
+  .navbar .nav li.dropdown.active > .dropdown-toggle,
+  .navbar .nav li.dropdown.open.active > .dropdown-toggle {
+    	color:#FFF; 
+  	background-color:#d8450b;
+  }
+
+  ul.nav li.dropdown:hover ul.dropdown-menu{ display: block; }
+  .dropdown-menu{
+  	font-family: "arial", sans-serif; 
+  	font-weight: normal;
+  	text-transform:uppercase; 
+  	font-size:10px;
+  	padding: 0px;
+  	margin: 0px;
+  	background-color: #383838;
+  	border: none;
+  	*border-right-width: none;
+  	*border-bottom-width: none;
+  	-webkit-border-radius: 0px;
+       -moz-border-radius: 0px;
+            border-radius: 0px;
+  	-webkit-box-shadow: none;
+       -moz-box-shadow: none;
+            box-shadow: none;
+  	-webkit-background-clip: none;
+       -moz-background-clip: none;
+            background-clip: none;
+  }
+  .navbar .nav > li > .dropdown-menu:before {
+    border-right: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+    border-bottom-color: none;
+  }
+  .dropdown-menu a {
+  	color: #ababab; 
+  	border-bottom:1px solid #474747;
+  	padding: 10px 10px;
+  	margin:0px 10px;
+  }
+  .dropdown-menu li > a:hover,
+  .dropdown-menu li > a:focus,
+  .dropdown-submenu:hover > a {
+    color: #f9f9f9;
+    text-decoration: none;
+    background-color: #383838;
+    background-image: none;
+    filter: none;
+  }
+  .navbar .nav li.dropdown.open > .dropdown-toggle .caret,
+  .navbar .nav li.dropdown.active > .dropdown-toggle .caret,
+  .navbar .nav li.dropdown.open.active > .dropdown-toggle .caret {
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+  }
+  .navbar .nav > li > .dropdown-menu:before,
+  .navbar .nav > li > .dropdown-menu:after {
+    display: none;
+  }
+
+
+  /**************************************
+  / Slider
+  **************************************/
+  .carousel-caption h4 { font-size: 14px; text-shadow:none; }
+  .carousel-caption {background: url(../img/post-item-hover.png);}
+  .carousel-control {border: none; top: 177px;}
+
+
+  /**************************************
+  / Gallery
+  **************************************/
+  .gallery-title { margin-bottom:15px; }
+  .gallery-item { margin-bottom:15px; margin-top:15px; }
+
+  .gallery-hover-6col,
+  .gallery-hover-4col,
+  .gallery-hover-3col,
+  .gallery-hover-4col-cir { 
+  	display:none; 
+  	background:url(../img/gallery-item-hover.png);
+  	position:absolute; 
+  	z-index: 10;
+  }
+  .gallery-hover-4col-cir{
+  	-webkit-border-radius: 500px;
+       -moz-border-radius: 500px;
+            border-radius: 500px;
+  }
+
+  /* Large Desktop Size */
+  @media (min-width: 1200px) {
+  	.gallery-hover-6col {width:170px; height:139px;}
+  	.gallery-hover-4col {width:270px; height:220px;}
+  	.gallery-hover-3col {width:370px; height:300px;}
+  	.gallery-hover-4col-cir {width:270px; height:270px;}
+  	.gallery-hover-4col-cir .gallery-icons {top: 45%; left:34%;}
+  }
+
+  /* Small Desktop Size */
+  @media (min-width: 980px) and (max-width: 1199px) {
+  	.gallery-hover-6col {width:140px; height:114px;}
+  	.gallery-hover-4col {width:220px; height:180px;}
+  	.gallery-hover-3col {width:300px; height:243px;}
+  	.gallery-hover-4col-cir {width:220px; height:220px;}
+  	.gallery-hover-4col-cir .gallery-icons {top: 42%; left:29%;}
+
+  	/* Clip descriptions */
+  	li.span4 .project-details {
+  	    -o-text-overflow: ellipsis;
+  	    text-overflow:    ellipsis;
+  	    overflow:hidden;
+  	    white-space:nowrap;
+  	    width: 280px;
+  	}
+  	li.span3 .project-details {
+  	    -o-text-overflow: ellipsis;
+  	    text-overflow:    ellipsis;
+  	    overflow:hidden;
+  	    white-space:nowrap;
+  	    width: 200px;
+  	}
+  	li.span2 .project-details {
+  	    -o-text-overflow: ellipsis;
+  	    text-overflow:    ellipsis;
+  	    overflow:hidden;
+  	    white-space:nowrap;
+  	    width: 120px;
+  	}
+  }
+
+  /* Portrait tablet to landscape */
+  @media (min-width: 768px) and (max-width: 979px) {
+
+  	/* Clip descriptions */
+  	li.span2 .project-details {display:none;}
+  	li.span3 .project-details {
+  	    -o-text-overflow: ellipsis;
+  	    text-overflow:    ellipsis;
+  	    overflow:hidden;
+  	    white-space:nowrap;
+  	    width: 146px;
+  	}
+  	li.span4 .project-details {
+  	    -o-text-overflow: ellipsis;
+  	    text-overflow:    ellipsis;
+  	    overflow:hidden;
+  	    white-space:nowrap;
+  	    width: 208px;
+  	}
+  }
+  /* Landscape phones and down */
+  @media (max-width: 480px) {
+  	.project-details {width: 250px; text-align: center}
+  	.gallery-post-grid {text-align: center}
+  	.project-details {margin-left:auto; margin-right: auto;}
+  	.gallery {text-align: center; }
+  	.gallery-cats { display: none;}
+  	li.span2 .project-details {
+  	    -o-text-overflow: ellipsis;
+  	    text-overflow:    ellipsis;
+  	    overflow:hidden;
+  	    white-space:nowrap;
+  	    width: 150px;
+  		}
+  }
+  /* Mobile Landscape Size */
+  @media only screen and (min-width: 480px) and (max-width: 767px) {
+  	li.span4 .project-details {width:350px;}
+  }
+  /* Mobile Portrait Size */
+  @media only screen and (max-width: 479px) {
+  	li.span4 .project-details {width:260px;}
+  }
+
+  .project-details {
+  	background:#f8f8f8;
+  	display: block;
+  	padding:10px;
+  	border-bottom: 1px dotted #a9a9a9;
+  	font-family: Georgia;
+  	font-style: italic;
+
+  	width: auto\9;
+      height: auto;
+      max-width: 100%;
+  }
+  .project-details a {
+  	margin: 0px; 
+  	font-size: 12px; 
+  	font-style: normal;
+  	text-shadow:none;
+  	display: block;
+  	font-family: "Oswald", sans-serif; 
+  	font-weight: normal;
+  	text-transform:uppercase; 
+  }
+  .project-details {color: #6f6f6f;}
+  .project-details a {color: #333333;}
+  .project-details a:hover {color:#d8450b; text-decoration: none;}
+
+  .project-info {margin: 0px 0px 40px 0px;}
+  .project-info li { 
+  	list-style: none; 
+  	border-bottom: 1px dashed #a9a9a9;;
+  	padding: 10px; }
+  .project-info li h6 {display: inline; margin-right: 5px;}
+
+  .gallery-icons {
+  	z-index: 9;
+  	position:absolute;
+  	bottom: 0px; 
+  	right: 0px;
+  	width: 89px;
+  	height: 42px;
+  	display: block;
+  }
+  a.item-zoom-link { 
+  	height: 42px;
+  	width: 42px;
+  	background: #ffffff url(../img/gallery-item-icons.png) no-repeat;
+  	background-position: 0px 0px;
+  	position:absolute;
+  	display: block;
+  }
+  a.item-details-link { 
+  	height: 42px;
+  	width: 42px;
+  	background: #ffffff url(../img/gallery-item-icons.png) no-repeat;
+  	background-position: -42px 0px;
+  	position:absolute; 
+  	left: 47px;
+  	display: block;
+  }
+  a.item-zoom-link:hover {background: #d8450b url(../img/gallery-item-icons.png) no-repeat;}
+  a.item-details-link:hover {background: #d8450b url(../img/gallery-item-icons.png) no-repeat; background-position: -42px 0px;}
+
+  .gallery-post-grid {margin:0px;}
+  .gallery-post-grid li {list-style: none; float: left; margin-bottom: 30px;}
+
+  .gallery-cats {margin: 0px 0px 20px 0px;}
+  .gallery-cats li{
+  	list-style: none; 
+  	float: left; 
+  	padding: 0px 10px;
+  	border-left: 1px dotted #a9a9a9;
+  }
+  .gallery-cats li:first-child{border-left:0px;}
+  	
+  	
+  /**************************************
+  / Blog
+  **************************************/
+  /*** Blog on Home Page ***/
+  .blog-summary {line-height: 18px;}
+  .post-info-shade { background:#f8f8f8; }
+  .post-info { line-height:20px; padding-top:10px; }
+  .post-info h4 {line-height: 26px; margin-top: 0px;}
+  .post-info h4 a, .post-info h4 a:hover {color:#333; text-decoration: none;}
+  .post-info ul li {list-style: none; padding-bottom: 2px; margin: 0px;}
+  .post-preview {line-height: 20px;}
+
+  /* All Sizes up to Large Desktop */
+  @media only screen and (max-width: 1199px) {
+  	.post-info h4 {clear:both;}
+  	.blog-details-preview {display: none; border:1px solid #000;}
+  }
+
+  /*** Blog List Page ***/
+  .blog article,
+  .blog section {margin-bottom: 40px;}
+  .blog article h3 {margin-top: 0px;}
+  .blog article h3 a, .blog article h4 a,
+  .blog article h3 a:hover, .blog article h4 a:hover {color:#333333; text-decoration: none;}
+  .blog h4 {line-height: 26px;}
+
+  /* Mobile Landscape Size */
+  @media only screen and (max-width: 479px) {
+  	.blog h4 {width:260px;}
+  }
+
+  .post-summary {background: #f8f8f8; padding-bottom: 20px; overflow: auto;}
+  .post-summary p {padding:20px; margin:0px;}
+  .post-summary-footer {margin: 0px; padding:0px 20px;}
+  .post-summary-footer button {margin: 0px; float:left;}
+  ul.post-data {float:right;}
+  ul.post-data-3 {margin-top:20px;}
+  ul.post-data li, ul.post-data-3 li {
+  	list-style: none; 
+  	float: left; 
+  	padding: 0px 10px;
+  	border-left: 1px dotted #a9a9a9;
+  }
+  ul.post-data li:first-child,
+  ul.post-data-3 li:first-child {border: none; padding-left: 0px;}
+  ul.post-data li:last-child {padding-right: 0px;}
+
+  /* Small Desktop Size */
+  @media (min-width: 980px) and (max-width: 1199px) {
+  	ul.post-data-3 li:last-child {display: none;}
+  }
+
+  /* Portrait tablet */
+  @media (min-width: 768px) and (max-width: 979px) {
+  	.post-summary-footer button {float: none; margin-bottom: 20px;}
+  	.blog article button {float: left; clear: both; margin-bottom: 20px;}
+  	ul.post-data-3 {display: none;}
+  	ul.post-data {float: none; clear: both; margin: 0px;}
+  	ul.post-data li:last-child {
+  		-o-text-overflow: ellipsis;
+  	    text-overflow:    ellipsis;
+  	    overflow:hidden;
+  	    white-space:nowrap;
+  	    width: 120px;
+  	}
+  }
+
+  .blog-style-2 h4 {margin-top:0px; margin-bottom: 10px;}
+  .blog-style-2 ul.post-data {margin:0px 0px 20px 0px;}
+  .blog-style-2 ul.post-data li {
+  	float: none; 
+  	margin:0px; 
+  	padding: 5px 0px 0px 0px;
+  	border: none;
+  }
+  .blog-post-grid {margin:0px;}
+  .blog-post-grid li {list-style: none; float: left; margin-bottom: 30px;}
+  .blog-post-hover { 
+  	display:none; 
+  	width:270px; height:220px;
+  	background:url(../img/post-item-hover.png);
+  	position:absolute; 
+  	z-index: 10;
+  }
+  .blog-post-hover p{
+  	color: #f8f8f8;
+  	padding:20px;
+  	font-family:Georgia, "Times New Roman", Times, serif;
+  	font-style: italic;
+  }
+  .blog-post-hover a{
+  	font-family: "Oswald", sans-serif; 
+  	font-weight: normal;
+  	text-transform:uppercase; 
+  	font-size: 28px;
+  	line-height: 32px;
+  	font-style: normal;
+  	color: #f8f8f8;
+  }
+  .blog-post-hover a:hover{ text-decoration: none; color: #d8450b;}
+
+  @media (min-width: 768px) and (max-width: 1199px) {
+  	.blog-post-hover {width:220px; height:179px;}
+  	.blog-post-hover a{ font-size: 20px; line-height: 24px;}
+  	}
+
+  /* All Mobile Sizes */
+  @media only screen and (max-width: 767px) {
+  	.post-summary-footer{display: none;}
+  	.post-summary{padding-bottom: 0px;}
+  	.blog-style-2 {display: none;}
+  }
+
+  /*** Blog Full Page ***/
+  .post-content {background: #f8f8f8; overflow: auto;}
+  .post-body {padding: 20px;}
+  .about-author img {float: left; margin-right: 20px;}
+
+  /*** Comments ***/
+  .comments ul {margin:0px;}
+  .comments ul li {
+  	list-style: none;
+  	padding: 20px;
+  	background: #f8f8f8;
+  	margin-bottom: 40px;
+  	border-bottom: 1px dotted #a9a9a9;
+  	border-top: 1px dotted #a9a9a9;
+  }
+  .comments ul li ul {margin-left:40px; padding-top: 20px;}
+  .comments ul li ul li {
+  	border-top: 1px dotted #a9a9a9;
+  	border-bottom: none;
+  	padding: 20px 20px;
+  	margin-bottom:0px;
+  }
+  .comments ul li ul li:last-child {padding-bottom: 0px;}
+
+  .comments ul li img {margin:0px 10px 10px 0px;}
+  .comment-name {
+  	font-family: "Oswald", sans-serif; 
+  	font-weight: normal;
+  	text-transform:uppercase; 
+  }
+  .comment-date {
+  	font-family:Georgia, "Times New Roman", Times, serif;
+  	font-style: italic;
+  	clear: both;
+  }
+  .comment-content { clear:both; padding-top:10px; }
+  .comment-form-container input,
+  #contact-form input {margin-bottom: 12px;}
+  .comment-form-container textarea,
+  #contact-form textarea {height: 150px;}
+  .comment-form-container .btn,
+  #contact-form .btn {margin-top: 12px;}
+
+
+  /**************************************
+  / Sidebar
+  **************************************/
+  .sidebar input{width: 80%;}
+  .sidebar h5 {margin-top: 40px;}
+  .sidebar ul.post-category-list,
+  .sidebar .tab-content .tab-pane ul {margin:0px;}
+  .sidebar ul.post-category-list li,
+  .sidebar .tab-content .tab-pane ul li {
+  	list-style: none; 
+  	border-bottom: 1px dashed #a9a9a9;
+  	padding:10px 5px;
+  }
+  .sidebar ul.post-category-list li a{
+  	font-family: "Oswald", sans-serif; 
+  	font-weight: normal;
+  	text-transform:uppercase; 
+  }
+  .sidebar ul.post-category-list li:first-child,
+  .sidebar .tab-content .tab-pane ul li:first-child{ padding-top: 0px; }
+  .sidebar ul.post-category-list li:last-child { padding-bottom: 0px; border-bottom:none; }
+  .sidebar ul.post-category-list li i {padding-right: 5px; background-position: 0 -95px;}
+  .sidebar .tab-content .tab-pane ul li i {padding-right: 5px;}
+
+  .popular-posts{ margin: 0px;}
+  .popular-posts li {
+  	list-style: none; 
+  	margin-bottom: 20px; 
+  	clear: both;
+  	display: block;
+  	min-height: 70px;
+  }
+  .popular-posts li a, 
+  .popular-posts li a:hover {color:#333333; text-decoration: none;}
+  .popular-posts li img {float: left; margin-right: 20px;}
+  .popular-posts li em {font-family:Georgia, "Times New Roman", Times, serif;}
+  p.side {margin-bottom: 20px;}
+
+  /* Mobile Portrait and Landscape Size */
+  @media only screen and (max-width: 479px) {
+  	iframe {width:270px;}
+  }
+  /* Tablet */
+  @media (min-width: 768px) and (max-width: 979px) {
+  	iframe {width:230px;}
+  }
+  /* Small Desktop Size */
+  @media (min-width: 980px) and (max-width: 1199px) {
+  	iframe {width:300px;}
+  }
+
+
+  /**************************************
+  / Footer
+  **************************************/
+  .footer-container {
+  	width:100%;
+  	background:#333;
+  	clear: both;
+   	position: relative;
+   	z-index: 10;
+  }
+  .footer-row { margin-top: 30px;}
+  .footer-col {color:#ababab; font-size: 11px;}
+  .footer-col a {color:#dcdcdc; font-weight: bold;}
+  .footer-col a:hover {color:#d8450b; text-decoration: none;}
+  .footer-col h5, .footer-col strong {color:#f9f9f9; text-shadow:none;}
+  .footer-col h5 {margin-bottom: 25px;}
+  .footer-col ul {margin: 0px;}
+  .footer-col ul li {list-style: none; padding-bottom: 20px;}
+  .footer-col ul.post-list li {
+  	border-bottom: 1px dashed #504f4f;
+  	padding: 10px 0px;
+  }
+  /* All Mobile Sizes */
+  @media only screen and (max-width: 767px) {
+  	.footer-col {
+  		clear:both;
+  		overflow: auto;
+  		margin-bottom: 20px;
+  	}
+  	.footer-sub .right {display: none;}
+  }
+  ul.img-feed li {
+  	float: left; 
+  	margin: 0px 7px 7px 0px; 
+  	padding-bottom: 0px;
+  }
+
+  /* Portrait tablet */
+  @media (min-width: 768px) and (max-width: 979px) {
+  	ul.img-feed li:nth-last-child(-n+4) {display: none;}
+  }
+
+  /**** Social Icons ****/
+  .social-icons {padding-top: 10px;}
+  .social-icons li {
+  	list-style: none; 
+  	float: left;
+  	margin-right: 6px;
+  }
+  /* Small Monitor */
+  @media (min-width: 980px) and (max-width: 1199px) {
+  	.social-icons li:last-child {display:none;}
+  }
+  a.social-icon { 
+  	background: url(../img/social-icons.png);
+  	display: block; 
+  	width: 46px; 
+  	height: 46px;
+  }
+  a.facebook {background-position: 0px 0px;}
+  a.facebook:hover {background-position: 0px -47px;}
+  a.twitter{background-position: -52px 0px;}
+  a.twitter:hover {background-position: -52px -47px;}
+  a.dribble{background-position: -104px 0px;}
+  a.dribble:hover {background-position: -104px -47px;}
+  a.rss{background-position: -156px 0px;}
+  a.rss:hover {background-position: -156px -47px;}
+  a.forrst{background-position: -208px 0px;}
+  a.forrst:hover {background-position: -208px -47px;}
+
+  /**** Sub Footer ****/
+  .footer-sub {background: #1f1f1f; padding: 10px 0px;}
+  .footer-sub div div span {padding: 0px 20px;}
+
+
+  /**************************************
+  / MISC
+  **************************************/
+  .row {margin-bottom:40px;}
+  .sub-row30 {margin-bottom:30px;}
+  .sub-row20 {margin-bottom:20px;}
+  .no-margin {margin-bottom:0px;}
+
+  a.accordion-toggle{background: #f5f5f5;}
+  .nav-tabs li.active a{background:#f8f8f8;}
+
+  @media only screen and  (max-width: 767px) {
+  	.btn {margin-bottom: 20px;}
+  }
+
+  .left {float: left;}
+  .right {float: right;}
+  .align-left{float: left; margin: 0px 20px 20px 0px;}
+  .align-right{float: right; margin: 0px 0px 20px 20px;}
+
+  .color-bg { background:#d8450b; }
+  .color { color:#d8450b; }
+  .color-bar-1, .color-bar-2 { width:100% }
+  .color-bar-1 { background:#414141; height:5px; }
+  .color-bar-2 { height:3px; }
+  .page-header { margin:0px }
+  .lead {line-height:28px; margin: 20px 0px 30px 0px; }
+
+  #toTop {
+  	width:47px;
+  	height:47px;
+  	background:url(../img/back-top-btn.png) no-repeat;
+  	text-align:center;
+  	position:fixed;
+  	bottom:25px;
+  	right:20px;
+  	cursor:pointer;
+  	display:none;
+  	text-indent:-9999px;
+  	z-index:12; 
+  }
+
+  /***** Lightbox *****/
+  #lightbox-image-details-caption {
+  	font-family: "Oswald", sans-serif; 
+  	font-weight: normal;
+  	text-transform:uppercase;
+  	font-size: 14px;
+  }
+  #lightbox-secNav-btnClose {width: 30px; padding-bottom: 0;}
+  #lightbox-image-details-currentNumber {display: none; visibility: hidden;}
+
+  /***** Testimonials *****/
+  .quote-text { 
+  	font-size:16px; 
+  	line-height:24px; 
+  	font-family:Georgia, "Times New Roman", Times, serif; 
+  	font-style:italic;
+  	margin:0px 20px; }
+  .quote-text cite { 
+  	font-size:12px; 
+  	color:#999;
+  	display:block;
+  	margin-top:5px; }
+
+  #clientCarousel.carousel .item {
+  	background: #f9f9f9;
+  	padding:20px 0px;
+      -webkit-transition: opacity 1s ease-in-out;
+  	-moz-transition: opacity 1s ease-in-out;
+  	-o-transition: opacity 1s ease-in-out;
+  	transition: opacity 1s ease-in-out;
+      left: 0 !important;
+    }
+  #clientCarousel.carousel .next.left, .carousel .prev.right {
+      opacity: 1;
+      z-index: 1;
+    }
+  #clientCarousel.carousel .active.left, .carousel .active.right {
+      opacity: 0;
+      z-index: 2;
+    }
+
+  /***** Client Logos *****/
+  .client-link { 
+  	display: block; 
+  	width: 100px; 
+  	height: 100px;
+  	position: relative;
+  }
+  .client-mask {
+  	display: block;
+  	width: 100px; 
+  	height: 100px;
+  	position: absolute;
+  	background: url(../img/rnd-client-mask.png);
+  }
+  .client-logos {margin: 20px 0px 0px 0px;}
+  .client-logos li {list-style: none; float: left; margin: 0px 7px;}
+
+  /* Small Monitor */
+  @media (min-width: 980px) and (max-width: 1199px) {
+  	.client-logos li:first-child {display: none;}
+  }
+  /* Portrait tablet */
+  @media (min-width: 768px) and (max-width: 979px) {
+  	.client-logos li:nth-last-child(-n+2) {display: none;}
+  }
+
+  /***** Features Page (these can be deleted)*****/
+  .the-grid div {
+  	background: #e4e4e4; 
+  	padding:10px 0px; 
+  	text-align: center;
+  }
+  .form-examples input { margin-bottom: 10px;}
+  .the-icons {list-style: none; margin-left: 0;}
+  .the-icons li {float: left; width: 25%; line-height: 25px;}
+
+  /* Mobile Portrait Size to Tablet Portrait Size */
+  @media only screen and  (max-width: 767px) {
+  	.the-icons li {float: none; width: 100%; line-height: 25px;}	
+  }
+
+  .distill-site-nav {
+    background-color: #632235   ;
+    font-size: 15px;
+  }
+
+  .d-title {
+    background-image: url("images/title.png");
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+
+  h1,h2, h3, h4, h5, h6 {
+    color: #632235;
+  }
+
+  </style>
   <!--/radix_placeholder_site_in_header-->
 
+  <link rel="stylesheet" href="custom-styles.css" type="text/css"/>
 
 </head>
 
@@ -2070,7 +2855,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Covid-19 Analysis: Afghanistan","description":"This blog contains an analysis on the no. of cases and deaths in the year 2021 for Afghanistan and a comparison of these numbers with the time in the first half and the second half of the year i.e. before and during the on-going crises in Afghanistan.","authors":[],"publishedDate":"2021-09-02T00:00:00.000+00:00"}
+{"title":"Covid-19 Analysis: Afghanistan","description":"This blog contains an analysis on the no. of cases and deaths in the year 2021 for Afghanistan and a comparison of these numbers with the time in the first half and the second half of the year till noww (2021) i.e. before and during the on-going crises in Afghanistan.","authors":[],"publishedDate":"2021-09-02T00:00:00.000+00:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2109,7 +2894,7 @@ Blogs
 <h1>Covid-19 Analysis: Afghanistan</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p>This blog contains an analysis on the no. of cases and deaths in the year 2021 for Afghanistan and a comparison of these numbers with the time in the first half and the second half of the year i.e. before and during the on-going crises in Afghanistan.</p>
+<p>This blog contains an analysis on the no. of cases and deaths in the year 2021 for Afghanistan and a comparison of these numbers with the time in the first half and the second half of the year till noww (2021) i.e. before and during the on-going crises in Afghanistan.</p>
 </div>
 
 
@@ -2121,6 +2906,7 @@ Blogs
 <li><a href="#introduction">Introduction</a></li>
 <li><a href="#data-description">Data Description</a></li>
 <li><a href="#analysis">Analysis</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
 <li><a href="#references">References</a></li>
 </ul>
 </nav>
@@ -2130,7 +2916,7 @@ Blogs
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="images/flag.png" width="70%" style="display: block; margin: auto;" /></p>
 </div>
-<p>Below, the analysis is focused on the COVID-19 numbers (cases and deaths) and its relation with the on-going crises.</p>
+<p>Below, the analysis is focused on the COVID-19 numbers of 2021 (cases and deaths) and its relation with the on-going crises.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
@@ -2139,9 +2925,13 @@ Blogs
 
 </div>
 <h3 id="data-source">Data Source</h3>
-<p>The data set used in this blog has been extracted from <a href="https://covid19.who.int/info/">World Health Organization-WHO</a>. Which was in-turn collected by WHO via different sources. Till 21 March’20, WHO collected these numbers via official ministries of health websites, social media and through official communications under the International Health Regulations-IHR, 2005. From 22 March’20, WHO collected data through WHO dashboards and counts declared at the WHO headquarters regularly (WHO Coronavirus (COVID-19) Dashboard, 2021).</p>
+<ul>
+<li><p>The data set used in this blog has been extracted from <a href="https://covid19.who.int/info/">World Health Organization-WHO</a>. Which was in-turn collected by WHO via different sources.</p></li>
+<li><p>Till 21 March’20, WHO collected these numbers via official ministries of health websites, social media and through official communications under the International Health Regulations-IHR, 2005.</p></li>
+<li><p>From 22 March’20, WHO collected data through WHO dashboards and counts declared at the WHO headquarters regularly (WHO Coronavirus (COVID-19) Dashboard, 2021).</p></li>
+</ul>
 <h3 id="variable-description">Variable description</h3>
-<p>The data set contains the data from January’20 to December’21. The variables used in the analysis are given below with their description and variable type:</p>
+<p>The data set used for the analysis contains the data from January’21 to August’21. The variables used in the analysis are given below with their description and variable type:</p>
 <div class="layout-chunk" data-layout="l-body">
 <table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -2182,32 +2972,10 @@ numeric
 </tr>
 <tr>
 <td style="text-align:left;">
-Cumulative_cases
-</td>
-<td style="text-align:left;">
-Total COVID-19 cases till date
-</td>
-<td style="text-align:left;">
-numeric
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
 New_deaths
 </td>
 <td style="text-align:left;">
 New COVID-19 deaths, calculated by subtracting ‘previous total deaths before the date’ from ‘current total deaths till date’
-</td>
-<td style="text-align:left;">
-numeric
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Cumulative_deaths
-</td>
-<td style="text-align:left;">
-Total COVID-19 deaths till date
 </td>
 <td style="text-align:left;">
 numeric
@@ -2240,407 +3008,29 @@ numeric
 </div>
 <h2 id="analysis">Analysis</h2>
 <h3 id="data-information-display">Data Information Display</h3>
-<p>The table below displays the mean, SD (Standard deviation) and range of the numeric variables.</p>
+<p>The table below displays the minimum values, maximum value, mean and SD (Standard deviation) of the numeric variables (other than year and month).</p>
 <div class="layout-chunk" data-layout="l-body">
-<div id="htmlwidget-d0a331c05609975f485d" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d0a331c05609975f485d">{"x":{"filter":"none","data":[["1","2","3","4"],["New Cases","New deaths","Total cases","Total deaths"],[0,0,52513,2201],[3243,159,153220,7118],[415.19,20.28,84249.89,3675.6],[581.72,27.86,37894.34,1741.74]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>variables<\/th>\n      <th>min<\/th>\n      <th>max<\/th>\n      <th>mean<\/th>\n      <th>sd<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":4,"columnDefs":[{"className":"dt-right","targets":[2,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[4,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-da6c6c202baa0937e3d1" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-da6c6c202baa0937e3d1">{"x":{"filter":"none","data":[["1","2"],["New Cases","New deaths"],[0,0],[3243,159],[415.19,20.28],[581.72,27.86]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>variables<\/th>\n      <th>min<\/th>\n      <th>max<\/th>\n      <th>mean<\/th>\n      <th>sd<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":4,"columnDefs":[{"className":"dt-right","targets":[2,3,4,5]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[4,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 </div>
 <h3 id="analysis-communicaion">Analysis Communicaion</h3>
+<p>Afghanistan has been under a war in the later months of 2021 till now (i.e. till Aug’21). The goal of the analysis is to find out if the crises has had an impact on the COVID-19 surge in the country as well.</p>
+<h4 id="covid-19-statistics-from-jan21-aug21">COVID-19 statistics from Jan’21-Aug’21</h4>
+<p>The table below, shows:</p>
+<ul>
+<li><p>The months of 2021 i.e. ‘1 to 8’ representing ‘January to August’ respectively.</p></li>
+<li><p>Total no. of deaths(sum) in the corresponding month.</p></li>
+<li><p>Total no. of cases(sum) in the corresponding month.</p></li>
+<li><p>A bar plot representing a trend of deaths in the corresponding month.</p></li>
+</ul>
 <div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>TO</span> <span class='op'>&lt;-</span> <span class='va'>Afghan_data</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>Month</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>summarise</span><span class='op'>(</span>
-            Sum_deaths <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>New_deaths</span><span class='op'>)</span>,
-            Sum_cases <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>New_cases</span><span class='op'>)</span>,
-            Deaths <span class='op'>=</span> <span class='fu'>spk_chr</span><span class='op'>(</span><span class='va'>New_deaths</span>, type <span class='op'>=</span> <span class='st'>"bar"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
- <span class='fu'>datatable</span><span class='op'>(</span>escape <span class='op'>=</span> <span class='cn'>FALSE</span>,
-            options <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>fnDrawCallback <span class='op'>=</span> <span class='fu'>htmlwidgets</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/htmlwidgets/man/JS.html'>JS</a></span><span class='op'>(</span><span class='st'>'function(){HTMLWidgets.staticRender();}'</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
-  <span class='fu'>spk_add_deps</span><span class='op'>(</span><span class='op'>)</span>
-<span class='va'>TO</span>
-</code></pre>
+<div id="htmlwidget-dd61e78cea53f1c75172" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-dd61e78cea53f1c75172">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8"],[1,2,3,4,5,6,7,8],[211,43,41,141,319,1927,1837,410],[2693,691,740,3291,12093,46821,28495,6066],["<span id=\"htmlwidget-fdb6b16b671a17e84740\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-fdb6b16b671a17e84740\">{\"x\":{\"values\":[12,10,10,9,7,7,9,4,7,13,11,13,7,6,10,12,3,4,3,8,9,7,3,5,7,4,0,8,2,1,0],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-72e73dc54a21fa6d5a93\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-72e73dc54a21fa6d5a93\">{\"x\":{\"values\":[4,1,1,1,0,1,2,3,1,4,1,5,3,0,0,1,0,2,0,0,2,1,2,1,2,4,1,0],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-0388239b78affe952284\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-0388239b78affe952284\">{\"x\":{\"values\":[1,2,0,0,3,0,0,2,0,0,0,3,0,3,2,1,0,2,0,0,1,1,2,0,1,0,2,1,2,4,8],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-17bc998ef7c4d36d7acf\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-17bc998ef7c4d36d7acf\">{\"x\":{\"values\":[5,6,1,1,11,4,0,4,5,0,0,8,0,3,1,2,4,0,7,3,8,4,4,7,10,10,6,13,7,7],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-53187aa92c4a5d94e3f5\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-53187aa92c4a5d94e3f5\">{\"x\":{\"values\":[6,6,5,6,6,10,9,10,3,12,12,3,8,9,3,9,3,6,11,10,10,10,10,10,24,19,14,12,18,20,25],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-1d37f3f655fa3bc64f13\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-1d37f3f655fa3bc64f13\">{\"x\":{\"values\":[29,34,27,34,36,41,42,64,54,51,56,37,78,85,71,0,159,92,96,92,93,78,73,86,67,75,56,80,64,77],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-b0f8d9d8a7d805f3108f\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-b0f8d9d8a7d805f3108f\">{\"x\":{\"values\":[91,86,59,92,84,77,55,62,84,77,86,67,58,74,60,89,26,49,66,53,27,32,32,36,32,52,38,62,38,62,31],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-d07b01d6567c3e9dba5d\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-d07b01d6567c3e9dba5d\">{\"x\":{\"values\":[29,37,30,32,28,15,18,11,28,25,17,10,12,10,11,4,6,12,4,7,11,5,6,7,7,3,8,2,6,7,2],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Month<\/th>\n      <th>Sum_deaths<\/th>\n      <th>Sum_cases<\/th>\n      <th>Deaths<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"fnDrawCallback":"function(){HTMLWidgets.staticRender();}","columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.fnDrawCallback"],"jsHooks":[]}</script>
 </div>
-<div id="htmlwidget-a54e537277d8f84edaea" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a54e537277d8f84edaea">{"x":{"filter":"none","data":[["1","2","3","4","5","6","7","8"],[1,2,3,4,5,6,7,8],[211,43,41,141,319,1927,1837,410],[2693,691,740,3291,12093,46821,28495,6066],["<span id=\"htmlwidget-75640682b3137f0f3f95\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-75640682b3137f0f3f95\">{\"x\":{\"values\":[12,10,10,9,7,7,9,4,7,13,11,13,7,6,10,12,3,4,3,8,9,7,3,5,7,4,0,8,2,1,0],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-f5601a2923aedd0dcc0b\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-f5601a2923aedd0dcc0b\">{\"x\":{\"values\":[4,1,1,1,0,1,2,3,1,4,1,5,3,0,0,1,0,2,0,0,2,1,2,1,2,4,1,0],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-34216eefacf8b03d2862\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-34216eefacf8b03d2862\">{\"x\":{\"values\":[1,2,0,0,3,0,0,2,0,0,0,3,0,3,2,1,0,2,0,0,1,1,2,0,1,0,2,1,2,4,8],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-3c120a937c510a4b0b28\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-3c120a937c510a4b0b28\">{\"x\":{\"values\":[5,6,1,1,11,4,0,4,5,0,0,8,0,3,1,2,4,0,7,3,8,4,4,7,10,10,6,13,7,7],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-48f39010cc9832025684\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-48f39010cc9832025684\">{\"x\":{\"values\":[6,6,5,6,6,10,9,10,3,12,12,3,8,9,3,9,3,6,11,10,10,10,10,10,24,19,14,12,18,20,25],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-1ae895287fb041719dfe\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-1ae895287fb041719dfe\">{\"x\":{\"values\":[29,34,27,34,36,41,42,64,54,51,56,37,78,85,71,0,159,92,96,92,93,78,73,86,67,75,56,80,64,77],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-c16011ef343fa3d24f3b\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-c16011ef343fa3d24f3b\">{\"x\":{\"values\":[91,86,59,92,84,77,55,62,84,77,86,67,58,74,60,89,26,49,66,53,27,32,32,36,32,52,38,62,38,62,31],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>","<span id=\"htmlwidget-dcb65d8e2854f6ca71c3\" class=\"sparkline html-widget\"><\/span>\n<script type=\"application/json\" data-for=\"htmlwidget-dcb65d8e2854f6ca71c3\">{\"x\":{\"values\":[29,37,30,32,28,15,18,11,28,25,17,10,12,10,11,4,6,12,4,7,11,5,6,7,7,3,8,2,6,7,2],\"options\":{\"type\":\"bar\",\"height\":20,\"width\":60},\"width\":60,\"height\":20},\"evals\":[],\"jsHooks\":[]}<\/script>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Month<\/th>\n      <th>Sum_deaths<\/th>\n      <th>Sum_cases<\/th>\n      <th>Deaths<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"fnDrawCallback":"function(){HTMLWidgets.staticRender();}","columnDefs":[{"className":"dt-right","targets":[1,2,3]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":["options.fnDrawCallback"],"jsHooks":[]}</script>
-</div>
-<div class="layout-chunk" data-layout="l-body">
-<div id="qdrawjxive" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
-}
-
-#qdrawjxive .gt_table {
-  display: table;
-  border-collapse: collapse;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#qdrawjxive .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#qdrawjxive .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#qdrawjxive .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#qdrawjxive .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#qdrawjxive .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#qdrawjxive .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#qdrawjxive .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#qdrawjxive .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#qdrawjxive .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#qdrawjxive .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#qdrawjxive .gt_group_heading {
-  padding: 8px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#qdrawjxive .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#qdrawjxive .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#qdrawjxive .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#qdrawjxive .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#qdrawjxive .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 12px;
-}
-
-#qdrawjxive .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#qdrawjxive .gt_first_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-}
-
-#qdrawjxive .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#qdrawjxive .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#qdrawjxive .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#qdrawjxive .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#qdrawjxive .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#qdrawjxive .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding: 4px;
-}
-
-#qdrawjxive .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#qdrawjxive .gt_sourcenote {
-  font-size: 90%;
-  padding: 4px;
-}
-
-#qdrawjxive .gt_left {
-  text-align: left;
-}
-
-#qdrawjxive .gt_center {
-  text-align: center;
-}
-
-#qdrawjxive .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#qdrawjxive .gt_font_normal {
-  font-weight: normal;
-}
-
-#qdrawjxive .gt_font_bold {
-  font-weight: bold;
-}
-
-#qdrawjxive .gt_font_italic {
-  font-style: italic;
-}
-
-#qdrawjxive .gt_super {
-  font-size: 65%;
-}
-
-#qdrawjxive .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
-  font-size: 65%;
-}
-</style>
-<table class="gt_table">
-  <thead class="gt_header">
-    <tr>
-      <th colspan="3" class="gt_heading gt_title gt_font_normal" style>Monthly trend of new cases and deaths in 2021</th>
-    </tr>
-    <tr>
-      <th colspan="3" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style>for Jan, Feb, March, April</th>
-    </tr>
-  </thead>
-  <thead class="gt_col_headings">
-    <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Month<br>Year 2021</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Mean value of Cases<br>(per month)</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Mean value of deaths<br>(per month)</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_right">1</td>
-<td class="gt_row gt_right">2693</td>
-<td class="gt_row gt_right">211</td></tr>
-    <tr><td class="gt_row gt_right">2</td>
-<td class="gt_row gt_right">691</td>
-<td class="gt_row gt_right">43</td></tr>
-    <tr><td class="gt_row gt_right">3</td>
-<td class="gt_row gt_right">740</td>
-<td class="gt_row gt_right">41</td></tr>
-    <tr><td class="gt_row gt_right">4</td>
-<td class="gt_row gt_right">3291</td>
-<td class="gt_row gt_right">141</td></tr>
-  </tbody>
-  <tfoot class="gt_sourcenotes">
-    <tr>
-      <td class="gt_sourcenote" colspan="3">Source: World Health Organization</td>
-    </tr>
-  </tfoot>
-  
-</table>
-</div>
-</div>
+<p>It is observed that:</p>
+<p>In January and April, total deaths and cases are comparatively higher when compared to February and March. But in May we observe that the cases have rapidly increased whose impact (deaths) is seen in June, and further June having a high crease of cases and gradual decrease till August.</p>
+<h4 id="covid-19-statistics-highlighted-from-may21-april21.">COVID-19 statistics highlighted from May’21-April’21.</h4>
+<p>Here, the statistics for latest 4 months is highlighted.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>TT</span> <span class='op'>&lt;-</span> <span class='va'>Afghan_data</span> <span class='op'>%&gt;%</span> 
@@ -2649,7 +3039,7 @@ numeric
             New_deaths <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>New_deaths</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
   <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>Month</span> <span class='op'>%in%</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"5"</span>,<span class='st'>"6"</span>,<span class='st'>"7"</span>,<span class='st'>"8"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
   <span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>formattable</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='fu'>area</span><span class='op'>(</span>col <span class='op'>=</span> <span class='fl'>2</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>)</span> <span class='op'>~</span> <span class='fu'>color_tile</span><span class='op'>(</span><span class='st'>"#F5B7B1"</span>, <span class='st'>"#7DCEA0"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='fu'>formattable</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span><span class='fu'>area</span><span class='op'>(</span>col <span class='op'>=</span> <span class='fl'>2</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>)</span> <span class='op'>~</span> <span class='fu'>color_tile</span><span class='op'>(</span><span class='st'>"#7EDCDE"</span>, <span class='st'>"#7DCEA0"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
 <span class='va'>TT</span>
 </code></pre>
 </div>
@@ -2673,10 +3063,10 @@ New_deaths
 5
 </td>
 <td style="text-align:right;">
-<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #d6bcac">12093</span>
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #7dd8ce">12093</span>
 </td>
 <td style="text-align:right;">
-<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #f5b7b1">319</span>
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #7edcde">319</span>
 </td>
 </tr>
 <tr>
@@ -2687,7 +3077,7 @@ New_deaths
 <span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #7dcea0">46821</span>
 </td>
 <td style="text-align:right;">
-<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #f0b7b0">1927</span>
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #7ddbdb">1927</span>
 </td>
 </tr>
 <tr>
@@ -2695,10 +3085,10 @@ New_deaths
 7
 </td>
 <td style="text-align:right;">
-<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #acc4a6">28495</span>
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #7dd3b8">28495</span>
 </td>
 <td style="text-align:right;">
-<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #f1b7b0">1837</span>
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #7ddbdb">1837</span>
 </td>
 </tr>
 <tr>
@@ -2706,15 +3096,19 @@ New_deaths
 8
 </td>
 <td style="text-align:right;">
-<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #e6b9ae">6066</span>
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #7ddad6">6066</span>
 </td>
 <td style="text-align:right;">
-<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #f4b7b0">410</span>
+<span style="display: block; padding: 0 4px; border-radius: 4px; background-color: #7ddbdd">410</span>
 </td>
 </tr>
 </tbody>
 </table>
 </div>
+<p>Clearly a high in numbers for cases and deaths is observed in June and July in Afghanistan and a sudden decrease in August.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>It is evident that by observing the numbers throughout the year, something unusual has happened in Afghanistan after April that has lead to a sudden hike in cases and deaths simultaneously. And this particular event definitely involves crowd gatherings, that being one of the major causes for increase in COVID-19.</p>
+<p>Hence, the crises in Afghanistan has caused an impact on COVID-19. As the crises comes to an end in August, we see that the cases and deaths have also dropped significantly from July to August.</p>
 <h2 id="references">References</h2>
 <p>Covid19.who.int. 2021. WHO Coronavirus (COVID-19) Dashboard. [online] Available at: <a href="https://covid19.who.int/info/" class="uri">https://covid19.who.int/info/</a> [Accessed 1 September 2021].</p>
 <p>Ghai, R., 2021. Taliban take-over: Afghanistan already battling drought, hunger, COVID-19. DownToEarth, [online]. URL: <a href="https://www.downtoearth.org.in/news/governance/taliban-take-over-afghanistan-already-battling-drought-hunger-covid-19-78475" class="uri">https://www.downtoearth.org.in/news/governance/taliban-take-over-afghanistan-already-battling-drought-hunger-covid-19-78475</a> [Accessed 1 September 2021].</p>
