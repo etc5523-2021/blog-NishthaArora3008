@@ -1,19 +1,24 @@
 ---
-title: "About the author and blog"
+title: "About me and this blog..."
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## Author
-
-The Author Nishtha Arora is a first year masters student in Business Analytics at Monash University,Clayton, Australia.
-
 ```{r, echo = F, out.width = '20%'}
 knitr::include_graphics("images/me.JPG")
 ```
 
-## Blog
+Hello! and Welcome to my blog. I am Nishtha Arora, a first year masters student of Business Analytics at Monash University, Clayton, Australia. This is my first blog which is a part of a semester 2 assessment. Presently I have been working on academic projects itself and aim to become a full time analyst. My other interests are reading, writing and swimming.
 
-The blog consists of 2 blog entries, out of which 1 is visible as of now, i.e. 'COVID-19 Analysis: Afghanistan'.
+Data, as we know, has the power to define our past, present and future and via this blog, I intend to use data and numbers as my greatest asset to dictate a story. My aim for writing this blog is to spot intriguing subjects in the world and enhance our intuitions, opinions and research using data.
+
+Hope you enjoy reading my blog entries! I am still working on conveying my story in the best way possible, so please email me your suggestions and feedback on: naro0004@student.monash.edu.
+
+Thank you. 
+
+Have a great day!
+
+
+

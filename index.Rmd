@@ -1,5 +1,27 @@
 ---
-title: "My stories!"
-site: distill::distill_website
-listing: posts
+title: "Welcome visitor! Thanks so much for stopping by."
+description: |
+  Telling stories through data here, are you ready to listen?
+author:
+  - name: Nishtha Arora 
+    url: https://github.com/etc5523-2021/blog-NishthaArora3008
+    affiliation: Monash University
+    affiliation_url: https://www.monash.edu
+output:
+  distill::distill_article:
+    self_contained: false
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+- The purpose of this blog is to share my story of analysis via data, using interactive tables and plots.
+
+- This blog consists of COVID-19 data analysis for Afghanistan as of now. Please click on 'Blogs' (top right) to navigate to the reading material i.e. COVID-19 Analysis: Afghanistan.
+
+Thank you!
+
+Enjoy reading.
+
+
