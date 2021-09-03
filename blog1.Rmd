@@ -101,6 +101,8 @@ description <- data.frame(variables, min, max, mean, sd)
 DT::datatable(description, options = list(pageLength = 4), caption = "Table 2: Variable Statistics") 
 ```
 
+Here from Table 2, an interesting observation is found out that the mean and SD of new cases is way more than the mean and SD of new deaths. 
+
 # Analysis
 
 ## Analysis Communicaion
