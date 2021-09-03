@@ -1,6 +1,6 @@
 ---
 title: "Covid-19 Analysis: Afghanistan"
-description: "This blog contains an analysis on the no. of cases and deaths in the year 2021 for Afghanistan and a comparison of these numbers with the time in the first half and the second half of the year till now (2021) i.e. before and during the on-going crises in Afghanistan."
+description: "This blog contains an analysis on the no. of cases and deaths in the year 2021 for Afghanistan and a comparison of these numbers with the time in the first half and the second half of the year till now i.e. before and during the on-going crises in Afghanistan."
 author:
   - name: Nishtha Arora
 date: "2021-09-01"
@@ -39,7 +39,7 @@ knitr::include_graphics("images/fl.jpg")
 
 ## The Afghanistan Crises
 
-By June 2021, Taliban (Islamic Emirate of Afghanistan) tried to take over Afghanistan and this came into limelight by mid July'21. This lead to a war-like scenario and included a series of events that brought a lot of people in great crowds. Two of such events were burning homes and other public properly, leaving people on the streets together and in August 2021, as the rescue planes were sent by The USA, huge crowds were observed at the airports.
+In June 2021, Taliban (Islamic Emirate of Afghanistan) tried to take over Afghanistan and this came into limelight by mid July'21. This lead to a war-like scenario and included a series of events that brought a lot of people in great crowds. Two of such events were burning homes and other public properly, leaving people on the streets together and in August 2021, as the rescue planes were sent by The USA, huge crowds were observed at the airports.
 
 ```{r global, echo = F, out.width = '70%', fig.align='center'}
 knitr::include_graphics("images/afg.jpg")
@@ -85,7 +85,7 @@ knitr::kable(Desc,
 
 ## Summary Statistics
 
-The table below displays the minimum values, maximum value, mean and SD (Standard deviation) of the numeric variables (other than year and month).
+The table below displays the minimum value, maximum value, mean and SD (Standard deviation) of the numeric variables (other than year and month).
 
 ```{r, echo= FALSE,results='asis'}
 variables <- c("New Cases", "New deaths")
@@ -133,9 +133,9 @@ TO
 ```
 It is observed that:
 
-In January and April, total deaths and cases are comparatively higher when compared to February and March. But in May we observe that the cases have rapidly increased whose impact (deaths) is seen in June, and further June having a high crease of cases and gradual decrease till August.
+In January and April, total deaths and cases are comparatively higher when compared to February and March. But in May we observe that the cases have rapidly increased whose impact (deaths) is seen in June, and further June having a high increase of cases and gradual decrease by August.
 
-Here, from the above table itself, the statistics for latest 4 months is highlighted below.
+Here, from table 3 itself, the statistics for latest 4 months is highlighted below.
 
 ```{r part2, echo=FALSE}
 TT <- Afghan_data %>% 
@@ -152,9 +152,9 @@ Clearly a high in numbers for cases and deaths is observed in June and July in A
 
 # Conclusion
 
-It is evident that by observing the numbers throughout the year, something unusual has happened in Afghanistan after May that has lead to a sudden hike in cases and deaths simultaneously. And this particular event definitely involves crowd gatherings, that being one of the major causes for increase in COVID-19.
+It is evident by observing the numbers throughout the year, that something unusual has happened in Afghanistan from June that has lead to a sudden hike in cases and deaths simultaneously. And this particular event definitely involves crowd gatherings, as that is one of the major causes for the spread of COVID-19, leading to high cases. And also,close contacts in gatherings causes severe transfer of the infection which is lethal leading to more deaths.
 
-Hence, the crises in Afghanistan has caused an impact on COVID-19. As the crises comes to an end in August, we see that the cases and deaths have also dropped significantly from July to August.
+Hence, the crises/war in Afghanistan has caused an impact on COVID-19. As the crises comes to an end in August, we see that the cases and deaths have also dropped significantly from July to August.
 
 # References
 
