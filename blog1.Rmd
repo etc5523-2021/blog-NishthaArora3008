@@ -33,12 +33,16 @@ Afghan_data <- read_csv(here::here(("data/WHO-COVID-19-global-data.csv"))) %>%
 
 Afghanistan is a country located in the south-central Asia. The country has been under a continuous conflict for 40 years and is again at war in 2021 itself. Before this it has been struggling with drought, hunger and along with it, the coronavirus disease (COVID-19) as well (Ghai, 2021).
 
+```{r image, echo = F, out.width = '70%', fig.align='center'}
+knitr::include_graphics("images/fl.jpg")
+```
+
 ## The Afghanistan Crises
 
 By June 2021, Taliban (Islamic Emirate of Afghanistan) tried to take over Afghanistan and this came into limelight by mid July'21. This lead to a war-like scenario and included a series of events that brought a lot of people in great crowds. Two of such events were burning homes and other public properly, leaving people on the streets together and in August 2021, as the rescue planes were sent by The USA, huge crowds were observed at the airports.
 
 ```{r global, echo = F, out.width = '70%', fig.align='center'}
-knitr::include_graphics("images/flag.png")
+knitr::include_graphics("images/afg.jpg")
 ```
 
 Below, the analysis is focused on the COVID-19 numbers of 2021 (cases and deaths) and its relation with the on-going crises.
@@ -75,7 +79,8 @@ Desc <- data.frame(Variables = names(Afghan_data),
 
 knitr::kable(Desc,
              caption = "Description of Variables used") %>% 
-  kable_styling(bootstrap_options = c("striped", "hover"))
+  kable_styling(bootstrap_options = c("striped", "hover")) %>% 
+  row_spec(1:5, color = "black", background = "#DAC8AB")
 ```
 
 ## Summary Statistics
@@ -93,7 +98,7 @@ mean <- c(round(mean(Afghan_data$New_cases),2),
 sd <-c(round(sd(Afghan_data$New_cases),2), 
            round(sd(Afghan_data$New_deaths),2))
 description <- data.frame(variables, min, max, mean, sd)
-DT::datatable(description, options = list(pageLength = 4), caption = "Table 2: Variable Statistics")
+DT::datatable(description, options = list(pageLength = 4), caption = "Table 2: Variable Statistics") 
 ```
 
 # Analysis
@@ -123,7 +128,7 @@ TO <- Afghan_data %>%
             Deaths = spk_chr(New_deaths, type = "bar")) %>% 
  datatable(escape = FALSE,
             options = list(fnDrawCallback = htmlwidgets::JS('function(){HTMLWidgets.staticRender();}')), caption = "Table 3: Trend of cases and deaths in 2021") %>% 
-  spk_add_deps()
+  spk_add_deps() %>% formatStyle("Sum_cases", backgroundColor="#F16C54  ") %>% formatStyle("Sum_deaths", backgroundColor="#74BD68  ")
 TO
 ```
 It is observed that:
@@ -139,7 +144,7 @@ TT <- Afghan_data %>%
             New_deaths = sum(New_deaths)) %>% 
   filter(Month %in% c("5","6","7","8")) %>% 
   as.data.frame() %>%
-  formattable(list(area(col = 2:3) ~ color_tile("#7EDCDE", "#7DCEA0")))
+  formattable(list(area(col = 2:3) ~ color_tile("#686AE4", "#F3C003")))
 TT
 ```
 

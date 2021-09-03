@@ -16,6 +16,8 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
+<img src="https://i.gifer.com/75ez.gif" alt="Bello">
+
 - The purpose of this blog is to share my story of analysis via data, using interactive tables and plots.
 
 - Please click on 'Blogs' (top right) to navigate to the reading material.
