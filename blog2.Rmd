@@ -1,8 +1,341 @@
 ---
-title: "Blog2"
-description: "coming soon..."
+title: "Health care in Mexico: a boon or a bane?"
+description: "The blog focuses on finding out if individuals have recovered at the same pace as testing positive for COVID-19 and if the deaths and cases have decreased since the beginning of vaccination doses."
+author:
+  - name: Nishtha Arora
+date: "2021-09-17"
 output:
   distill::distill_article:
     toc: true
-    toc_depth: 2
 ---
+
+```{r loadinglibraries, echo=FALSE}
+library(readr)
+library(tidyverse)
+library(lubridate)
+library(kableExtra)
+library(ggplot2)
+library(countrycode)
+library(plotly)
+library(Hmisc)
+library(corrplot)
+library(gt)
+library(ggpubr)
+```
+
+# Introduction 
+
+```{r reading_data, echo=FALSE}
+covid_data <- read_csv(here::here(("data/owid-covid-data.csv"))) 
+```
+
+
+Mexico is a country in North America and northern most country of Latin America, which mainly consists of Spanish and Portuguese speaking population. It has a population of 128,932,754 people high rates of population growth due to improvement in health care sector. This blog will highlight the effect of improved health care during the COVID-19 pandemic (2020 and 2021) in Mexico (Grayson & Ball, 2021).
+
+```{r image, echo = F, out.width = '70%', fig.align='center'}
+knitr::include_graphics("images/me.jpg")
+```
+
+## Background
+
+Mexico has reported one of the highest mortality rates in the world due to its late implementation of social distancing restrictions. The lethality in Mexico due to COVID-19 is found out to be 9.2% and has the lowest no. of tests per capita (Tariq et al., 2021).
+
+According to the [Scientific reports](https://www.nature.com/articles/s41598-021-90329-w) that after the restrictions, Mexico has been successful in controlling its COVID-19 cases, by implementing better public health measures (Arellanos-Soto et al., 2021).
+
+The data stories throw light on the numbers of recoveries, COVID-19 testing, cases, deaths and vaccinations to justify the above background. 
+
+# Data Description
+
+## Data source 
+
+The data has been extracted from an online publication, [Our World in Data](https://ourworldindata.org/coronavirus/country/mexico). The data is collected and uploaded by researchers *Hannah Ritchie, Diana Beltekian, Edouard Mathieu, Cameron Appel, Lucas Rodés-Guirao,  Esteban Ortiz-Ospina, Charlie Giattino,  Bobbie MacDonald, Joe Hasell and Max Roser* (Ritchie et al., 2021).
+
+The collection of data by the researchers is done via various sources like specialized institutions, research articles, statistical agencies or official data from government sources ("Data FAQs", 2021).  
+
+## Variable description
+
+```{r data_wrangle_check_correct, include=FALSE}
+var_select <- covid_data %>% 
+  filter(location == "Mexico") %>% 
+  select(date, new_cases, new_deaths, new_tests, positive_rate, new_vaccinations) %>% 
+  mutate(year= year(date)) %>% 
+  #mutate(year= as.factor(year)) %>% 
+  mutate(new_recoveries = new_cases-new_deaths) %>% 
+  mutate(new_test_result_positive = (positive_rate*new_tests)) %>% 
+  mutate(new_test_result_positive=round(new_test_result_positive))  %>% 
+  rename(new_positive_rate = "positive_rate") %>% 
+  select(-c(date))
+clean <- unique(var_select [ , 1:8 ] )
+data_types <- str(clean)
+```
+
+The original data set is wrangled, duplicate data is removed, variables are selected and renamed and new ones are mutated to form a clean data set for the analysis. 
+
+The data set formed contains the statistics for everyday case, deaths, recoveries, tests and vaccination doses for the year 2020 and 2021. The number of rows in the data set are `r nrow(clean)` and the number of columns are `r ncol(clean)`.
+
+Table 1 shows the variables that are used for the analysis:
+
+*All the variables (except year) have prefix as 'new'. This means the variable is calculated by subtracting the 'previous total value before the date' from 'current total value till date'.*
+
+```{r, echo=FALSE}
+Desc <- data.frame(Variables = names(clean),
+                          Description = c("New COVID-19 cases",
+                                          "New COVID-19 deaths",
+                                          "New COVID-19 tests",
+                                          "This values shows the news positive tests out of total new tests",
+                                          "New COVID-19 vaccination doses",
+                                          "2020 or 2020 (pandemic years)",
+                                          "The no. of people recovered from COVID-19 after testing positive for it. It is calculated by subtracting 'new_deaths' from 'new_cases'",
+                                          "The no. of poeple testing positive for COVID-19. It is calculated by multiplying 'positive rate' by new_positive_rate"
+                                        
+                                          ),
+                   Type = c("numeric",
+                            "numeric",
+                            "numeric",
+                            "numeric",
+                            "numeric",
+                            "factor",
+                            "numeric",
+                            "numeric"))
+
+knitr::kable(Desc,
+             caption = "Description of Variables") %>% 
+  kable_styling(bootstrap_options = c("striped", "hover")) %>% 
+  row_spec(1:8, color = "black", background = "#DAC8AB")
+```
+## Summary Statistics
+
+Table 2 displays the minimum (min), maximum (max), mean and standard deviation (sd) value for each numeric variable in the data set.
+
+```{r, echo=FALSE}
+cases <- clean %>% select(new_cases) %>% na.omit()
+deaths <- clean %>% select(new_deaths) %>% na.omit()
+tests <- clean %>% select(new_tests) %>% na.omit()
+rate <- clean %>% select(new_positive_rate) %>% na.omit()
+vac <- clean %>% select(new_vaccinations) %>% na.omit()
+rec <- clean %>% select(new_recoveries) %>% na.omit()
+pos <- clean %>% select(new_test_result_positive) %>% na.omit()
+
+variables <- c("new Cases", "new deaths", "new_tests", "new_positive_rate", "new_vaccinations", "new_recoveries", "new_test_result_positive")
+min <- c(min(cases$new_cases), 
+           min(deaths$new_deaths),
+         min(tests$new_tests),
+         min(rate$new_positive_rate),
+         min(vac$new_vaccinations),
+         min(rec$new_recoveries),
+         min(pos$new_test_result_positive))
+max <- c(max(cases$new_cases), 
+           max(deaths$new_deaths),
+         max(tests$new_tests),
+         max(rate$new_positive_rate),
+         max(vac$new_vaccinations),
+         max(rec$new_recoveries),
+         max(pos$new_test_result_positive))
+mean <- c(round(mean(cases$new_cases),2), 
+           round(mean(deaths$new_deaths),2),
+         round(mean(tests$new_tests),2),
+         round(mean(rate$new_positive_rate),2),
+         round(mean(vac$new_vaccinations),2),
+         round(mean(rec$new_recoveries),2),
+         round(mean(pos$new_test_result_positive),2))
+sd <-c(round(sd(cases$new_cases),2), 
+        round(sd(deaths$new_deaths),2),
+         round(sd(tests$new_tests),2),
+         round(sd(rate$new_positive_rate),2),
+         round(sd(vac$new_vaccinations),2),
+         round(sd(rec$new_recoveries),2),
+         round(sd(pos$new_test_result_positive),2))
+description <- data.frame(variables, min, max, mean, sd)
+
+gt(description) %>% 
+  tab_header(title = "Table 2: Summary statistics",
+           subtitle = "2020-2021") %>% 
+  tab_options(
+    heading.subtitle.font.size = 12,
+    heading.align = "center",
+    table.border.top.color = "black",
+    column_labels.border.bottom.color = "black",
+    column_labels.border.bottom.width= px(3),
+  )%>% 
+  data_color(
+    columns = c(min, max, mean, sd),
+    colors = scales::col_numeric(
+      c("#DAC8AB", "#DAC8AB", "#DAC8AB"),
+        domain = NULL
+        )
+      )
+```
+
+# Analysis
+
+## Story 1 Visualizations
+
+**Map showing that Mexico is one of the countries with highest mortality rate**
+*(Please use plotly i.e. click on the country regions to see more information.)*
+
+```{r map, echo=FALSE, fig.cap="Map showing countries with most deaths"}
+
+map <- covid_data %>% 
+  select(location, new_deaths) %>% na.omit() %>% 
+  group_by(location) %>% 
+  summarise(total_deaths=sum(new_deaths))
+
+map $iso3 <- countrycode(map$location, 'country.name', 'iso3c')
+map[map$location=="Kosovo","iso3"] <- "XKX" 
+map <- map %>% filter(location != "World") 
+
+fig <- plot_ly(map, type='choropleth', locations= map$iso3 , z= map$total_deaths, text= ~paste(
+                      "<br><b>Country:</b> ", location,
+                      "<br><b>HDI rank 2019:</b>", total_deaths), colorscale="distiller")
+fig <- fig %>% colorbar(title = "Total deaths" )
+fig <- fig %>% layout(
+    title = "Map 1: Countries with highest mortality rate")
+fig
+```
+
+Plot showing relation between **the no. of people tested positive for COVID-19** and **their recoveries**. *(Please press on PLAY for transitioning from 2020 to 2021)*
+
+```{r, echo=FALSE, fig.cap= "Positive tests vs Recovery in 2020 and 2021"}
+library(plotly)
+fig <- clean %>%
+  plot_ly(
+    x = ~new_test_result_positive,
+    y = ~new_recoveries,
+    frame = ~year,
+    type = 'scatter',
+    color = "red",
+    mode = 'markers',
+    showlegend = F
+  )
+fig <- fig %>%
+  animation_opts(
+    1000, easing = "elastic", redraw = FALSE
+  )
+fig <- fig %>%
+  animation_slider(
+    currentvalue = list(prefix = "YEAR ", font = list(color="red"))
+  )
+fig
+```
+
+Story 1 Observations:
+
+- From Figure 1, it is seen that Mexico falls under the countries that have had high amount of deaths since 2020 till present (2021).
+
+- From Figure 2, we see that in 2020 less people tested positive for COVID-19 as compared to 2021.although people are testing positive at almost the same rate, people are recovering too at the same pace.
+
+We can say that, Mexico had had high no. of deaths since 2020 and also the positive cases have gradually increased for both the years, but also the recovery rate for COVID-19 tested individuals has increased too approximately at the same pace. This justifies that the **Mexico health care has managed to control the situation and mortality**.
+
+## Story 2: Visualizations
+
+Plot's showing correlation of **No. of vaccination doses** with **No. of cases** and **No. of deaths** using correlation coefficient(R value).
+
+```{r, fig.show='hold', echo=FALSE, fig.cap="Cases vs Vaccination doses"}
+cleann <- clean %>% na.omit()
+ggscatter(cleann, x = "new_vaccinations", y = "new_cases",
+          add = "reg.line", conf.int = TRUE,
+          cor.coef = TRUE, cor.method = "pearson",
+  xlab = "No. of vaccinations",
+  ylab = "No. of cases")+
+  theme_pubr()+
+  scale_x_continuous(labels = scales::comma) +
+  geom_smooth(method = "loess", color = "red", se = FALSE) +
+  geom_point(alpha = 0.4)
+```
+
+```{r, fig.cap="Deaths vs Vaccination doses", echo=FALSE}
+
+ggscatter(cleann, x = "new_vaccinations", y = "new_deaths",
+          add = "reg.line", conf.int = TRUE,
+          cor.coef = TRUE, cor.method = "pearson",
+  xlab = "No. of vaccinations",
+  ylab = "No. of deaths")+
+  theme_pubr()+
+  scale_x_continuous(labels = scales::comma) +
+  geom_smooth(method = "loess", color = "red", se = FALSE) +
+  geom_point(alpha = 0.4)
+```
+
+Story 2 Observations:
+
+- Figure 3: The R value here is R=0.2 which signifies that it is a VERY weak positive linear relationship. This means that as no. of vaccinations are increasing, the no. of cases are also increasing but at a very slow pace. We can say that the vaccinations little impact on the no. of cases as the cases are not increasing rapidly.
+
+- Figure 4: The R value here is R=-0.25 which signifies that it is a VERY weak negative linear relationship. This means that as the vaccination doses increase, the deaths decrease, but at a very slow pace. We can say that the vaccinations have some impact on controlling deaths as well as the no. of deaths are decreasing to some extent.
+
+# Conclusion
+
+The conclusion is explained via plotting a *correlation matrix plot* i.e. Correlogram. Here, POSITIVE correlations are displayed in BLUE and NEGATIVE are displayed in RED.
+
+```{r conclusion, echo=FALSE, fig.cap="Conclusion"}
+plot <- clean %>% select(-c(year)) %>% 
+  na.omit()
+plot.cor <- cor(plot)
+plot.cor = cor(plot, method = c("spearman")) 
+corrplot(plot.cor)
+```
+
+We conclude that:
+
+- Though positive tested people keep increasing throughout the year of 2020 and 2021, but recoveries take place at the same pace too, showing that the** health care sector is improving and effecting the health in a positive way**.
+
+- There is almost VERY weak positive relation between vaccinations and cases i.e. as vaccination doses increase, the cases increase but at a VERY slow pace. Also, the increase in vaccination doses has lead to decrease of deaths too, again, at a slow pace but a decrease is seen (VERY weak negative relationship).This shows that the **rate at which vaccinations are provided by the health care, is helping in reducing the surge of cases and bringing down deaths slowly but steadily**.
+
+Hence, the health sector at Mexico is improved and is improving **gradually** to become a **big boon to the country**. 
+
+# References
+
+[1] Alboukadel Kassambara (2020). ggpubr: 'ggplot2' Based Publication Ready
+  Plots. R package version 0.4.0. https://CRAN.R-project.org/package=ggpubr
+
+[2] Arel-Bundock et al., (2018). countrycode: An R package to convert country
+names and country codes. Journal of Open Source Software, 3(28), 848,
+https://doi.org/10.21105/joss.00848
+
+[3] Arellanos-Soto, D., Padilla-Rivas, G., Ramos-Jimenez, J., Galan-Huerta, K., Lozano-Sepulveda, S., & Martinez-Acuña, N. et al. (2021). Decline in influenza cases in Mexico after the implementation of public health measures for COVID-19. Scientific Reports, 11(1). doi: 10.1038/s41598-021-90329-w
+
+[4] C. Sievert. Interactive Web-Based Data Visualization with R, plotly, and
+shiny. Chapman and Hall/CRC Florida, 2020.
+
+[5] Data FAQs. (2021). Retrieved 16 September 2021, from https://ourworldindata.org/faqs#how-is-our-work-copyrighted
+
+[6] Frank E Harrell Jr, with contributions from Charles Dupont and many others.
+(2021). Hmisc: Harrell Miscellaneous. R package version 4.5-0.
+https://CRAN.R-project.org/package=Hmisc
+
+[7] Garrett Grolemund, Hadley Wickham (2011). Dates and Times Made Easy
+with lubridate. Journal of Statistical Software, 40(3), 1-25. URL
+https://www.jstatsoft.org/v40/i03/.
+
+[8] GitHub: Where the world builds software. (2021). Retrieved 2 June 2021, from https://github.com/
+
+[9] Grayson, G., & Ball, J. (2021). About Mexico | Scholastic. Retrieved 16 September 2021, from https://www.scholastic.com/teachers/articles/teaching-content/mexico/
+
+[10] H. Wickham. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New
+York, 2016.
+
+[11] Hadley Wickham and Jim Hester (2021). readr: Read Rectangular Text
+Data. R package version 2.0.0. https://CRAN.R-project.org/package=readr
+
+[12] Hao Zhu (2021). kableExtra: Construct Complex Table with 'kable' and Pipe
+Syntax. R package version 1.3.4. https://CRAN.R-project.org/package=kableExtra
+
+[13] Richard Iannone, Joe Cheng and Barret Schloerke (2021). gt: Easily Create
+Presentation-Ready Display Tables. R package version 0.3.1.
+https://CRAN.R-project.org/package=gt
+
+[14] Ritchie, H., Mathieu, E., Rodés-Guirao, L., Appel, C., Giattino, C., & Ortiz-Ospina, E. et al. (2021). Coronavirus Pandemic (COVID-19). Retrieved 16 September 2021, from https://ourworldindata.org/coronavirus/country/mexico
+
+[15] RStudio Team (2020). RStudio: Integrated Development for R. RStudio, PBC, Boston, MA URL http://www.rstudio.com/.
+
+[16] Tanaka, E., 2021. ETC5523: Communicating with Data, Monash University.
+
+[17] Taiyun Wei and Viliam Simko (2021). R package 'corrplot': Visualization of a
+Correlation Matrix (Version 0.90). Available from
+https://github.com/taiyun/corrplot
+
+[18] Tariq, A., Banda, J., Skums, P., Dahal, S., Castillo-Garsow, C., & Espinoza, B. et al. (2021). Transmission dynamics and forecasts of the COVID-19 pandemic in Mexico, March-December 2020. PLOS ONE, 16(7), e0254826. doi: 10.1371/journal.pone.0254826
+
+[19] Wickham et al., (2019). Welcome to the tidyverse. Journal of Open
+Source Software, 4(43), 1686, https://doi.org/10.21105/joss.01686
+
+
