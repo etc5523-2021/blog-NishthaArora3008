@@ -9,7 +9,7 @@ navbar:
       menu:
         - text: "Covid-19 Analysis: Afghanistan"
           href: blog1.html
-        - text: "Blog entry 2"
+        - text: "Health care in Mexico: a boon or a bane?"
           href: blog2.html
     - icon: fab fa-github
       href: https://github.com/etc5523-2021/blog-NishthaArora3008

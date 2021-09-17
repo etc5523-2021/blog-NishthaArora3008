@@ -8,7 +8,7 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ```{r, echo = F, out.width = '20%'}
-knitr::include_graphics("images/me.JPG")
+knitr::include_graphics("images/about.JPG")
 ```
 
 Hello! and Welcome to my blog. I am Nishtha Arora, a first year masters student of Business Analytics at Monash University, Clayton, Australia. This is my first blog which is a part of a semester 2 assessment. Presently I have been working on academic projects itself and aim to become a full time analyst. My other interests are reading, writing and swimming.

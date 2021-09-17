@@ -33,7 +33,7 @@ covid_data <- read_csv(here::here(("data/owid-covid-data.csv")))
 Mexico is a country in North America and northern most country of Latin America, which mainly consists of Spanish and Portuguese speaking population. It has a population of 128,932,754 people high rates of population growth due to improvement in health care sector. This blog will highlight the effect of improved health care during the COVID-19 pandemic (2020 and 2021) in Mexico (Grayson & Ball, 2021).
 
 ```{r image, echo = F, out.width = '70%', fig.align='center'}
-knitr::include_graphics("images/me.jpg")
+knitr::include_graphics("images/mex.jpg")
 ```
 
 ## Background
