@@ -170,33 +170,32 @@ gt(description) %>%
 
 ## Story 1 Visualizations
 
-**Map showing that Mexico is one of the countries with highest mortality rate**
+**Map showing that Mexico is one of the countries with moderate recovery rate**
 *(Please use plotly i.e. click on the country regions to see more information.)*
 
-```{r map, echo=FALSE, fig.cap="Map showing countries with most deaths"}
+```{r map, echo=FALSE, fig.cap="Countries vs Recovery count"}
 
-map <- covid_data %>% 
-  select(location, new_deaths) %>% na.omit() %>% 
+for_map <- covid_data %>% mutate(new_recoveries = new_cases-new_deaths)
+  
+map <- for_map %>% 
+  select(location, new_recoveries) %>% na.omit() %>% 
   group_by(location) %>% 
-  summarise(total_deaths=sum(new_deaths))
+  summarise(recoveries=sum(new_recoveries))
 
 map $iso3 <- countrycode(map$location, 'country.name', 'iso3c')
 map[map$location=="Kosovo","iso3"] <- "XKX" 
 map <- map %>% filter(location != "World") 
 
-fig <- plot_ly(map, type='choropleth', locations= map$iso3 , z= map$total_deaths, text= ~paste(
+fig <- plot_ly(map, type='choropleth', locations= map$iso3 , z= map$recoveries, text= ~paste(
                       "<br><b>Country:</b> ", location,
-                      "<br><b>HDI rank 2019:</b>", total_deaths), colorscale="distiller")
-fig <- fig %>% colorbar(title = "Total deaths" )
-fig <- fig %>% layout(
-    title = "Map 1: Countries with highest mortality rate")
+                      "<br><b>Recovery_count:</b>", recoveries), colorscale="distiller")
+fig <- fig %>% colorbar(title = "Total recoveries" )
 fig
 ```
 
 Plot showing relation between **the no. of people tested positive for COVID-19** and **their recoveries**. *(Please press on PLAY for transitioning from 2020 to 2021)*
 
 ```{r, echo=FALSE, fig.cap= "Positive tests vs Recovery in 2020 and 2021"}
-library(plotly)
 fig <- clean %>%
   plot_ly(
     x = ~new_test_result_positive,
@@ -220,11 +219,11 @@ fig
 
 Story 1 Observations:
 
-- From Figure 1, it is seen that Mexico falls under the countries that have had high amount of deaths since 2020 till present (2021).
+- From Figure 1, it is seen that Mexico falls under the countries that have had moderate recovery rate since 2020 till present (2021).
 
-- From Figure 2, we see that in 2020 less people tested positive for COVID-19 as compared to 2021.although people are testing positive at almost the same rate, people are recovering too at the same pace.
+- From Figure 2, we see that in 2020 less people tested positive for COVID-19 as compared to 2021. Although people are testing positive at almost the same rate, people are recovering too at the same pace.
 
-We can say that, Mexico had had high no. of deaths since 2020 and also the positive cases have gradually increased for both the years, but also the recovery rate for COVID-19 tested individuals has increased too approximately at the same pace. This justifies that the **Mexico health care has managed to control the situation and mortality**.
+Both the graphs show that Mexico has a recovery rate which is moderate and at a suitable pace. This shows that the health sector in Mexico is gradually improving and **has managed to control the situation and mortality**.
 
 ## Story 2: Visualizations
 
